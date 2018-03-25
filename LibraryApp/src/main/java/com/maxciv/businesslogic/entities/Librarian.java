@@ -1,4 +1,4 @@
-package com.maxciv.businesslogic;
+package com.maxciv.businesslogic.entities;
 
 import java.util.ArrayList;
 import java.util.List;

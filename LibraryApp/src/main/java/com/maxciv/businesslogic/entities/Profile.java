@@ -1,4 +1,4 @@
-package com.maxciv.businesslogic;
+package com.maxciv.businesslogic.entities;
 
 public class Profile {
 

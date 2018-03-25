@@ -1,7 +1,7 @@
 package com.maxciv;
 
-import com.maxciv.businesslogic.Book;
-import com.maxciv.businesslogic.Librarian;
+import com.maxciv.businesslogic.entities.Book;
+import com.maxciv.businesslogic.entities.Librarian;
 
 import java.util.ArrayList;
 import java.util.List;
