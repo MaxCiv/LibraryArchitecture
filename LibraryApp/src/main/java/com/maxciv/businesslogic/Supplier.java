@@ -12,7 +12,9 @@ public class Supplier extends Profile {
     }
 
     public List<Book> findOrderedBooks(Ordering ordering) {
-        return ordering.getOrderedBooks();
+        // процесс поиска книг
+        ordering.setFoundBooks(ordering.getOrderedBooks()); // найдены все заказанные книги
+        return ordering.getFoundBooks();
     }
 
     public String getCompanyName() {

@@ -1,5 +1,6 @@
 package com.maxciv.businesslogic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Librarian extends Profile {
@@ -14,6 +15,14 @@ public class Librarian extends Profile {
         this.currentOrdering = currentOrdering;
         this.currentContracts = currentContracts;
     }
+
+    public Ordering createOrdering(long id, Supplier supplier, List<Book> orderedBooks) {
+        Ordering newOrdering = new Ordering(id, supplier, orderedBooks, new ArrayList<>(), new ArrayList<>(), Ordering.STAT_OPENED);
+        currentOrdering.add(newOrdering);
+        return newOrdering;
+    }
+
+
 
     public List<Book> getRequiredBooks() {
         return requiredBooks;

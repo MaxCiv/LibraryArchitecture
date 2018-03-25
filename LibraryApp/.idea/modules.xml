@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LibraryApp.iml" filepath="$PROJECT_DIR$/LibraryApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maxciv.iml" filepath="$PROJECT_DIR$/.idea/modules/maxciv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maxciv_main.iml" filepath="$PROJECT_DIR$/.idea/modules/maxciv_main.iml" group="maxciv" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maxciv_test.iml" filepath="$PROJECT_DIR$/.idea/modules/maxciv_test.iml" group="maxciv" />
     </modules>
   </component>
 </project>
