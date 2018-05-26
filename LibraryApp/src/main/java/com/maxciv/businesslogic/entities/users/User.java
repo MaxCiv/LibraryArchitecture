@@ -1,4 +1,4 @@
-package com.maxciv.businesslogic.entities;
+package com.maxciv.businesslogic.entities.users;
 
 import com.maxciv.businesslogic.Role;
 
@@ -11,6 +11,9 @@ public interface User {
 
     String getLogin();
     void setLogin(String login);
+
+    String getPassword();
+    void setPassword(String password);
 
     String getName();
     void setName(String name);

@@ -1,10 +1,18 @@
-package com.maxciv.businesslogic.entities;
+package com.maxciv.businesslogic.entities.users;
 
 public abstract class AbstractUser implements User {
 
     private int id;
     private String login;
+    private String password;
     private String name;
+
+    public AbstractUser(int id, String login, String password, String name) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.name = name;
+    }
 
     @Override
     public int getId() {
@@ -24,6 +32,16 @@ public abstract class AbstractUser implements User {
     @Override
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

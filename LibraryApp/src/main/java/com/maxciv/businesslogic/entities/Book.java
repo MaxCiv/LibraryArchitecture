@@ -1,5 +1,8 @@
 package com.maxciv.businesslogic.entities;
 
+import com.maxciv.businesslogic.Condition;
+import com.maxciv.businesslogic.Status;
+
 public class Book {
 
     private int id;
@@ -7,13 +10,17 @@ public class Book {
     private String author;      // автор книги
     private String publisher;   // издатель
     private int publishYear;    // год издательства
+    private Status status;
+    private Condition condition;
 
-    public Book(int id, String title, String author, String publisher, int publishYear) {
+    public Book(int id, String title, String author, String publisher, int publishYear, Status status, Condition condition) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.publisher = publisher;
         this.publishYear = publishYear;
+        this.status = status;
+        this.condition = condition;
     }
 
     public long getId() {
@@ -54,5 +61,21 @@ public class Book {
 
     public void setPublishYear(int publishYear) {
         this.publishYear = publishYear;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Condition getCondition() {
+        return condition;
+    }
+
+    public void setCondition(Condition condition) {
+        this.condition = condition;
     }
 }
