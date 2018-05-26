@@ -1,27 +1,11 @@
 package com.maxciv.businesslogic.entities;
 
-import java.util.List;
+import com.maxciv.businesslogic.Role;
 
-public class Supplier extends Profile {
+public class Supplier extends AbstractUser {
 
-    private String companyName;     // название компании поставщика
-
-    public Supplier(long id, String name, String companyName) {
-        super(id, name);
-        this.companyName = companyName;
-    }
-
-    public List<Book> findOrderedBooks(Ordering ordering) {
-        // процесс поиска книг
-        ordering.setFoundBooks(ordering.getOrderedBooks()); // найдены все заказанные книги
-        return ordering.getFoundBooks();
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    @Override
+    public Role getRole() {
+        return Role.SUPPLIER;
     }
 }
