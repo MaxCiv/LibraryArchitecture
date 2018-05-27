@@ -4,16 +4,28 @@ import com.maxciv.businesslogic.entities.Book;
 
 import java.util.Date;
 
-public class AbstractBookRecord implements BookRecord {
+public abstract class AbstractBookRecord implements BookRecord {
 
     private int id;
     private Book book;
-    private Date startDate;
-    private Date endDate;
+    private Date startDate = null;
+    private Date endDate = null;
 
     public AbstractBookRecord(int id, Book book) {
         this.id = id;
         this.book = book;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) return false;
+        BookRecord otherBookRecord = (BookRecord) obj;
+        return id == otherBookRecord.getId();
     }
 
     @Override

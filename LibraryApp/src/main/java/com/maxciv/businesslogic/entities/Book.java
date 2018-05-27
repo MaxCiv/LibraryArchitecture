@@ -23,7 +23,19 @@ public class Book {
         this.condition = condition;
     }
 
-    public long getId() {
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        Book otherBook = (Book) obj;
+        return id == otherBook.getId();
+    }
+
+    public int getId() {
         return id;
     }
 

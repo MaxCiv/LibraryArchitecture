@@ -1,21 +1,30 @@
 package com.maxciv.businesslogic.entities.libraryrecords;
 
 import com.maxciv.businesslogic.entities.Book;
+import com.maxciv.businesslogic.entities.users.Reader;
+
+import java.util.Date;
 
 public class BookBorrow extends AbstractBookRecord {
 
-    private int readerId;
+    private Reader reader;
 
-    public BookBorrow(int id, Book book, int readerId) {
+    public BookBorrow(int id, Book book, Reader reader, Date startDate) {
         super(id, book);
-        this.readerId = readerId;
+        this.reader = reader;
+        this.setStartDate(startDate);
     }
 
-    public int getReaderId() {
-        return readerId;
+    public BookBorrow(int id, Book book, Reader reader, Date startDate, Date endDate) {
+        this(id, book, reader, startDate);
+        this.setEndDate(endDate);
     }
 
-    public void setReaderId(int readerId) {
-        this.readerId = readerId;
+    public Reader getReader() {
+        return reader;
+    }
+
+    public void setReader(Reader reader) {
+        this.reader = reader;
     }
 }

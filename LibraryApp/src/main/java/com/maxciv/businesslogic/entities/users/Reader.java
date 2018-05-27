@@ -6,10 +6,12 @@ public class Reader extends AbstractUser {
 
     private int countBookLeftForExchange;   // количество книг, которые читатель оставил на обмен (книги на обмене,
                                             // владельцем которых является данный читатель и у которых нет даты окончания)
+    private int countBookTakenByExchange;   // количество книг, которые читатель взял по обмену
 
-    public Reader(int id, String login, String password, String name, int countBookLeftForExchange) {
+    public Reader(int id, String login, String password, String name, int countBookLeftForExchange, int countBookTakenByExchange) {
         super(id, login, password, name);
         this.countBookLeftForExchange = countBookLeftForExchange;
+        this.countBookTakenByExchange = countBookTakenByExchange;
     }
 
     @Override
@@ -23,5 +25,13 @@ public class Reader extends AbstractUser {
 
     public void setCountBookLeftForExchange(int countBookLeftForExchange) {
         this.countBookLeftForExchange = countBookLeftForExchange;
+    }
+
+    public int getCountBookTakenByExchange() {
+        return countBookTakenByExchange;
+    }
+
+    public void setCountBookTakenByExchange(int countBookTakenByExchange) {
+        this.countBookTakenByExchange = countBookTakenByExchange;
     }
 }

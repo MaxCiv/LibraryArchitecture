@@ -1,30 +1,50 @@
 package com.maxciv.businesslogic.entities.libraryrecords;
 
 import com.maxciv.businesslogic.entities.Book;
+import com.maxciv.businesslogic.entities.users.Reader;
+
+import java.util.Date;
 
 public class BookExchange extends AbstractBookRecord {
 
-    private int ownerId;
-    private int readerId;
+    private Reader owner;
+    private Date openExchangeDate;
+    private Reader reader = null;
 
-    public BookExchange(int id, Book book, int ownerId) {
+    public BookExchange(int id, Book book, Reader owner, Date openExchangeDate) {
         super(id, book);
-        this.ownerId = ownerId;
+        this.owner = owner;
+        this.openExchangeDate = openExchangeDate;
     }
 
-    public int getOwnerId() {
-        return ownerId;
+    public BookExchange(int id, Book book, Reader owner, Date openExchangeDate, Reader reader, Date startDate, Date endDate) {
+        this(id, book, owner, openExchangeDate);
+        this.reader = reader;
+        this.setStartDate(startDate);
+        this.setEndDate(endDate);
     }
 
-    public void setOwnerId(int ownerId) {
-        this.ownerId = ownerId;
+    public Reader getOwner() {
+        return owner;
     }
 
-    public int getReaderId() {
-        return readerId;
+    public void setOwner(Reader owner) {
+        this.owner = owner;
     }
 
-    public void setReaderId(int readerId) {
-        this.readerId = readerId;
+    public Date getOpenExchangeDate() {
+        return openExchangeDate;
+    }
+
+    public void setOpenExchangeDate(Date openExchangeDate) {
+        this.openExchangeDate = openExchangeDate;
+    }
+
+    public Reader getReader() {
+        return reader;
+    }
+
+    public void setReader(Reader reader) {
+        this.reader = reader;
     }
 }

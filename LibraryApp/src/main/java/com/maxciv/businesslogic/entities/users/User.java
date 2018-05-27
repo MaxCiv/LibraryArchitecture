@@ -14,6 +14,7 @@ public interface User {
 
     String getPassword();
     void setPassword(String password);
+    void encryptAndSetPassword(String password);
 
     String getName();
     void setName(String name);

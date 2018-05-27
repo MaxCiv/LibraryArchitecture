@@ -1,10 +1,12 @@
 package com.maxciv.businesslogic.entities.users;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 public abstract class AbstractUser implements User {
 
     private int id;
     private String login;
-    private String password;
+    private String password;    // здесь хранится хэш пароля
     private String name;
 
     public AbstractUser(int id, String login, String password, String name) {
@@ -12,6 +14,18 @@ public abstract class AbstractUser implements User {
         this.login = login;
         this.password = password;
         this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        return login.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) return false;
+        User otherUser = (User) obj;
+        return login.equals(otherUser.getLogin());
     }
 
     @Override
@@ -42,6 +56,11 @@ public abstract class AbstractUser implements User {
     @Override
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public void encryptAndSetPassword(String password) {
+        this.password = DigestUtils.sha1Hex(password);
     }
 
     @Override
