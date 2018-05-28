@@ -21,17 +21,17 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="loginTextField" alignment="CENTER" onAction="#onClickLogInButton" prefHeight="25.0" prefWidth="210.0" promptText="Login">
+            <TextField fx:id="loginTextField" alignment="CENTER" onAction="#onClickLogInButton" prefHeight="25.0" prefWidth="210.0" promptText="Login" text="root">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <PasswordField fx:id="passwordTextField" alignment="CENTER" onAction="#onClickLogInButton" prefHeight="25.0" prefWidth="210.0" promptText="Password">
+            <PasswordField fx:id="passwordTextField" alignment="CENTER" onAction="#onClickLogInButton" prefHeight="25.0" prefWidth="210.0" promptText="Password" text="1111">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </PasswordField>
-            <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="240.0" text="Error:" textAlignment="CENTER">
+            <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="240.0" text="Error:" textAlignment="CENTER" wrapText="true">
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin>

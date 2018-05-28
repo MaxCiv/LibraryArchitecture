@@ -16,7 +16,6 @@ public class LogInDialogController {
     @FXML private TextField loginTextField;
     @FXML private PasswordField passwordTextField;
     @FXML private Label errorLabel;
-    @FXML private Button logInButton;
 
     public LogInDialogController() {
     }
@@ -37,8 +36,7 @@ public class LogInDialogController {
         try {
             int userId = facade.logInUser(login, password);
             Main.showMainView(userId);
-            errorLabel.setText("All good, congrats.");
-        } catch (LogInErrorException e) {   //LogInErrorException
+        } catch (LogInErrorException e) {
             errorLabel.setText(e.getMessage());
         }
     }

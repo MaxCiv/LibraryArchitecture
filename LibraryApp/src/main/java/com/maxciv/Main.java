@@ -1,6 +1,7 @@
 package com.maxciv;
 
 import com.maxciv.businesslogic.exceptions.NotFoundException;
+import com.maxciv.gui.controllers.MainLibrarianViewController;
 import com.maxciv.gui.facades.CommonFacade;
 import com.maxciv.gui.facades.Facade;
 import javafx.application.Application;
@@ -63,7 +64,19 @@ public class Main extends Application {
     }
 
     private static void showMainLibrarianView(int userId) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("/view/MainLibrarianView.fxml"));
+            AnchorPane root = loader.load();
+            MainLibrarianViewController librarianViewController = loader.getController();
+            librarianViewController.init(userId);
 
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();    //TODO
+        }
     }
 
     private static void showMainReaderView(int userId) {
