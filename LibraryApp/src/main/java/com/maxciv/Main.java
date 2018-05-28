@@ -1,19 +1,76 @@
 package com.maxciv;
 
-import com.maxciv.businesslogic.entities.Book;
+import com.maxciv.businesslogic.exceptions.NotFoundException;
+import com.maxciv.gui.facades.CommonFacade;
+import com.maxciv.gui.facades.Facade;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
 
-public class Main {
+public class Main extends Application {
+
+    public static final Facade FACADE = new CommonFacade();
+    private static Stage mainStage;
 
     public static void main(String[] args) {
-        System.out.println("Starting...");
-        Book book = new Book(0, "Title", "Author", "Publisher", 1963);
-        List<Book> requiredBooks = new ArrayList<>();
-        requiredBooks.add(book);
-//        Librarian01 librarian = new Librarian01(0, "Zero", requiredBooks, new ArrayList<>(), new ArrayList<>());
-//        book.setTitle("NewTitle");
-//        System.out.println(librarian.getRequiredBooks().get(0).getTitle());
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        mainStage = primaryStage;
+        mainStage.setTitle("LibraryApp");
+
+        showLogInDialog();
+    }
+
+    public static void showLogInDialog() {
+        try {
+            AnchorPane root = FXMLLoader.load(Main.class.getResource("/view/LogInDialog.fxml"));
+
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void showMainView(int userId) {
+        String userRole = "";
+        try {
+            userRole = FACADE.getUserRole(userId);
+        } catch (NotFoundException e) {
+            e.printStackTrace();    //TODO
+        }
+        switch (userRole) {
+            case "Librarian":
+                showMainLibrarianView(userId);
+                break;
+            case "Reader":
+                showMainReaderView(userId);
+                break;
+            case "Supplier":
+                showMainSupplierView(userId);
+                break;
+            default:
+                //TODO
+        }
+    }
+
+    private static void showMainLibrarianView(int userId) {
+
+    }
+
+    private static void showMainReaderView(int userId) {
+
+    }
+
+    private static void showMainSupplierView(int userId) {
+
     }
 }

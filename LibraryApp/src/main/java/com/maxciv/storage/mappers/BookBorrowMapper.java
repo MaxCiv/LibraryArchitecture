@@ -30,7 +30,7 @@ public class BookBorrowMapper implements Mapper<BookBorrow> {
         if (loadedBookBorrowMap.values().contains(bookBorrow)) {
             update(bookBorrow);
         } else {
-            String insertSQL = "INSERT INTO LibraryBooks(book_id, reader_id, start_date, end_date) VALUES (?, ?, ?, ?);";
+            String insertSQL = "INSERT INTO librarybooks(book_id, reader_id, start_date, end_date) VALUES (?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, bookBorrow.getBook().getId());
             preparedStatement.setInt(2, bookBorrow.getReader().getId());
@@ -58,7 +58,7 @@ public class BookBorrowMapper implements Mapper<BookBorrow> {
         }
 
         // BookBorrow not found, extract from database
-        String selectSQL = "SELECT * FROM LibraryBooks WHERE id = ?;";
+        String selectSQL = "SELECT * FROM librarybooks WHERE id = ?;";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -84,7 +84,7 @@ public class BookBorrowMapper implements Mapper<BookBorrow> {
     public Map<Integer, BookBorrow> findAll() throws SQLException {
         Map<Integer, BookBorrow> allBookBorrows = new HashMap<>();
 
-        String selectSQL = "SELECT id FROM LibraryBooks;";
+        String selectSQL = "SELECT id FROM librarybooks;";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(selectSQL);
 
@@ -98,7 +98,7 @@ public class BookBorrowMapper implements Mapper<BookBorrow> {
     @Override
     public void update(BookBorrow item) throws SQLException {
         if (loadedBookBorrowMap.values().contains(item)) {
-            String updateSQL = "UPDATE LibraryBooks SET  book_id = ?, reader_id = ?, start_date = ?, end_date = ?  WHERE id = ?;";
+            String updateSQL = "UPDATE librarybooks SET  book_id = ?, reader_id = ?, start_date = ?, end_date = ?  WHERE id = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
             preparedStatement.setInt(1, item.getBook().getId());
             preparedStatement.setInt(2, item.getReader().getId());

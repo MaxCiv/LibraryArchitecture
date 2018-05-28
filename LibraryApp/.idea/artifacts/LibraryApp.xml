@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="LibraryApp">
+    <output-path>$PROJECT_DIR$/out/artifacts/LibraryApp</output-path>
+    <root id="root">
+      <element id="module-output" name="maxciv_main" />
+      <element id="module-output" name="maxciv" />
+      <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:2.6.0" />
+      <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.11" />
+      <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.11" />
+      <element id="module-output" name="maxciv_test" />
+      <element id="library" level="project" name="Gradle: junit:junit:4.12" />
+      <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.3" />
+    </root>
+  </artifact>
+</component>

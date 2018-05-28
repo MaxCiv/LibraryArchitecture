@@ -25,7 +25,7 @@ public class UserMapper implements Mapper<User> {
         if (loadedUserMap.values().contains(user)) {
             update(user);
         } else {
-            String insertSQL = "INSERT INTO User(login, password, name, role) VALUES (?, ?, ?, ?);";
+            String insertSQL = "INSERT INTO user(login, password, name, role) VALUES (?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, user.getLogin());
             preparedStatement.setString(2, user.getPassword());
@@ -50,7 +50,7 @@ public class UserMapper implements Mapper<User> {
         }
 
         // User not found, extract from database
-        String selectSQL = "SELECT * FROM User WHERE id = ?;";
+        String selectSQL = "SELECT * FROM user WHERE id = ?;";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -76,7 +76,7 @@ public class UserMapper implements Mapper<User> {
         }
 
         // User not found, extract from database
-        String selectSQL = "SELECT * FROM User WHERE login = ?;";
+        String selectSQL = "SELECT * FROM user WHERE login = ?;";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setString(1, login);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -99,7 +99,7 @@ public class UserMapper implements Mapper<User> {
     public Map<Integer, User> findAll() throws SQLException {
         Map<Integer, User> allUsers = new HashMap<>();
 
-        String selectSQL = "SELECT id FROM User;";
+        String selectSQL = "SELECT id FROM user;";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(selectSQL);
 
@@ -113,7 +113,7 @@ public class UserMapper implements Mapper<User> {
     @Override
     public void update(User item) throws SQLException {
         if (loadedUserMap.values().contains(item)) {
-            String updateSQL = "UPDATE User SET  password = ?, name = ?, role = ?  WHERE login = ?;";
+            String updateSQL = "UPDATE user SET  password = ?, name = ?, role = ?  WHERE login = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
             preparedStatement.setString(1, item.getPassword());
             preparedStatement.setString(2, item.getName());
@@ -155,7 +155,7 @@ public class UserMapper implements Mapper<User> {
     }
 
     private int getCountBookLeftForExchange(final int ownerId) throws SQLException {
-        String selectSQL = "SELECT COUNT(*) FROM ExchangeBooks WHERE (owner_id = ? AND end_date IS NULL);";
+        String selectSQL = "SELECT COUNT(*) FROM exchangebooks WHERE (owner_id = ? AND end_date IS NULL);";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setInt(1, ownerId);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -166,7 +166,7 @@ public class UserMapper implements Mapper<User> {
     }
 
     private int getCountBookTakenByExchange(final int readerId) throws SQLException {
-        String selectSQL = "SELECT COUNT(*) FROM ExchangeBooks WHERE (reader_id = ? AND end_date IS NULL);";
+        String selectSQL = "SELECT COUNT(*) FROM exchangebooks WHERE (reader_id = ? AND end_date IS NULL);";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setInt(1, readerId);
         ResultSet resultSet = preparedStatement.executeQuery();

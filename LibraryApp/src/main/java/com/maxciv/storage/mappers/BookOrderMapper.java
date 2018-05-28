@@ -30,7 +30,7 @@ public class BookOrderMapper implements Mapper<BookOrder> {
         if (loadedBookOrderMap.values().contains(bookOrder)) {
             update(bookOrder);
         } else {
-            String insertSQL = "INSERT INTO OrderBooks(book_id, supplier_id, start_date, end_date) VALUES (?, ?, ?, ?);";
+            String insertSQL = "INSERT INTO orderbooks(book_id, supplier_id, start_date, end_date) VALUES (?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, bookOrder.getBook().getId());
             preparedStatement.setInt(2, bookOrder.getSupplier().getId());
@@ -58,7 +58,7 @@ public class BookOrderMapper implements Mapper<BookOrder> {
         }
 
         // BookOrder not found, extract from database
-        String selectSQL = "SELECT * FROM OrderBooks WHERE id = ?;";
+        String selectSQL = "SELECT * FROM orderbooks WHERE id = ?;";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -84,7 +84,7 @@ public class BookOrderMapper implements Mapper<BookOrder> {
     public Map<Integer, BookOrder> findAll() throws SQLException {
         Map<Integer, BookOrder> allBookOrders = new HashMap<>();
 
-        String selectSQL = "SELECT id FROM OrderBooks;";
+        String selectSQL = "SELECT id FROM orderbooks;";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(selectSQL);
 
@@ -98,7 +98,7 @@ public class BookOrderMapper implements Mapper<BookOrder> {
     @Override
     public void update(BookOrder item) throws SQLException {
         if (loadedBookOrderMap.values().contains(item)) {
-            String updateSQL = "UPDATE OrderBooks SET  book_id = ?, supplier_id = ?, start_date = ?, end_date = ?  WHERE id = ?;";
+            String updateSQL = "UPDATE orderbooks SET  book_id = ?, supplier_id = ?, start_date = ?, end_date = ?  WHERE id = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
             preparedStatement.setInt(1, item.getBook().getId());
             preparedStatement.setInt(2, item.getSupplier().getId());

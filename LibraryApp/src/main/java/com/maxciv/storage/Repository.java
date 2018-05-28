@@ -1,27 +1,14 @@
 package com.maxciv.storage;
 
-import com.maxciv.storage.mappers.*;
+import com.maxciv.businesslogic.entities.users.User;
 
-import java.sql.SQLException;
+public interface Repository {
 
-public class Repository {
+    User logInUser(String login, String realPassword);
+    User findUserById(int id);
 
-    private static BookMapper bookMapper;
-    private static UserMapper userMapper;
-    private static BookBorrowMapper bookBorrowMapper;
-    private static BookExchangeMapper bookExchangeMapper;
-    private static BookOrderMapper bookOrderMapper;
-
-    public Repository() {
-        try {
-            if (bookMapper == null) bookMapper = new BookMapper();
-            if (userMapper == null) userMapper = new UserMapper();
-            if (bookBorrowMapper == null) bookBorrowMapper = new BookBorrowMapper();
-            if (bookExchangeMapper == null) bookExchangeMapper = new BookExchangeMapper();
-            if (bookOrderMapper == null) bookOrderMapper = new BookOrderMapper();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
+    void update(Object obj);
+    void updateAll();
+    void clearAll();
+    void dropAll();
 }

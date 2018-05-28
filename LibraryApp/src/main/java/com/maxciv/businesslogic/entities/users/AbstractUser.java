@@ -17,6 +17,11 @@ public abstract class AbstractUser implements User {
     }
 
     @Override
+    public Boolean logIn(String realPassword) {
+        return DigestUtils.sha1Hex(realPassword).equals(getPassword());
+    }
+
+    @Override
     public int hashCode() {
         return login.hashCode();
     }
@@ -59,8 +64,8 @@ public abstract class AbstractUser implements User {
     }
 
     @Override
-    public void encryptAndSetPassword(String password) {
-        this.password = DigestUtils.sha1Hex(password);
+    public void encryptAndSetPassword(String realPassword) {
+        this.password = DigestUtils.sha1Hex(realPassword);
     }
 
     @Override

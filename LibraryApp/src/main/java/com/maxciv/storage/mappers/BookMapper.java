@@ -23,7 +23,7 @@ public class BookMapper implements Mapper<Book> {
         if (loadedBookMap.values().contains(book)) {
             update(book);
         } else {
-            String insertSQL = "INSERT INTO Book(title, author, publisher, publish_year, status, condition) VALUES (?, ?, ?, ?, ?, ?);";
+            String insertSQL = "INSERT INTO book(title, author, publisher, publish_year, status, condition) VALUES (?, ?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, book.getTitle());
             preparedStatement.setString(2, book.getAuthor());
@@ -50,7 +50,7 @@ public class BookMapper implements Mapper<Book> {
         }
 
         // Book not found, extract from database
-        String selectSQL = "SELECT * FROM Book WHERE id = ?;";
+        String selectSQL = "SELECT * FROM book WHERE id = ?;";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -75,7 +75,7 @@ public class BookMapper implements Mapper<Book> {
     public Map<Integer, Book> findAll() throws SQLException {
         Map<Integer, Book> allBooks = new HashMap<>();
 
-        String selectSQL = "SELECT id FROM Book;";
+        String selectSQL = "SELECT id FROM book;";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(selectSQL);
 
@@ -89,7 +89,7 @@ public class BookMapper implements Mapper<Book> {
     @Override
     public void update(Book item) throws SQLException {
         if (loadedBookMap.values().contains(item)) {
-            String updateSQL = "UPDATE Book SET  title = ?, author = ?, publisher = ?, publish_year = ?, status = ?, condition = ?  WHERE id = ?;";
+            String updateSQL = "UPDATE book SET  title = ?, author = ?, publisher = ?, publish_year = ?, status = ?, condition = ?  WHERE id = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
             preparedStatement.setString(1, item.getTitle());
             preparedStatement.setString(2, item.getAuthor());

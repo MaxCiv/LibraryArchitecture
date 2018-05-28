@@ -1,7 +1,7 @@
 package com.maxciv.businesslogic;
 
 public enum Role {
-    LIBRARIAN(0, "Librarian01"),
+    LIBRARIAN(0, "Librarian"),
     READER(1, "Reader"),
     SUPPLIER(2, "Supplier");
 

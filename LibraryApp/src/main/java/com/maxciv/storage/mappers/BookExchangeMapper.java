@@ -30,7 +30,7 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
         if (loadedBookExchangeMap.values().contains(bookExchange)) {
             update(bookExchange);
         } else {
-            String insertSQL = "INSERT INTO ExchangeBooks(book_id, owner_id, open_exchange_date, reader_id, start_date, end_date) VALUES (?, ?, ?, ?, ?, ?);";
+            String insertSQL = "INSERT INTO exchangebooks(book_id, owner_id, open_exchange_date, reader_id, start_date, end_date) VALUES (?, ?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, bookExchange.getBook().getId());
             preparedStatement.setInt(2, bookExchange.getOwner().getId());
@@ -61,7 +61,7 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
         }
 
         // BookExchange not found, extract from database
-        String selectSQL = "SELECT * FROM ExchangeBooks WHERE id = ?;";
+        String selectSQL = "SELECT * FROM exchangebooks WHERE id = ?;";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -94,7 +94,7 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
     public Map<Integer, BookExchange> findAll() throws SQLException {
         Map<Integer, BookExchange> allBookExchanges = new HashMap<>();
 
-        String selectSQL = "SELECT id FROM ExchangeBooks;";
+        String selectSQL = "SELECT id FROM exchangebooks;";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(selectSQL);
 
@@ -108,7 +108,7 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
     @Override
     public void update(BookExchange item) throws SQLException {
         if (loadedBookExchangeMap.values().contains(item)) {
-            String updateSQL = "UPDATE ExchangeBooks SET  book_id = ?, owner_id = ?, open_exchange_date = ?, reader_id = ?, start_date = ?, end_date = ?  WHERE id = ?;";
+            String updateSQL = "UPDATE exchangebooks SET  book_id = ?, owner_id = ?, open_exchange_date = ?, reader_id = ?, start_date = ?, end_date = ?  WHERE id = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
             preparedStatement.setInt(1, item.getBook().getId());
             preparedStatement.setInt(2, item.getOwner().getId());

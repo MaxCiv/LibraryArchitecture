@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maxciv.gui.controllers.MainLibrarianViewController">
+   <children>
+      <HBox prefHeight="35.0" prefWidth="800.0">
+         <children>
+            <ToolBar prefHeight="35.0" prefWidth="500.0">
+               <items>
+                  <Label text="Librarian ID:" />
+                  <Label fx:id="currentLibrarianIdLabel" alignment="CENTER" prefWidth="30.0" text="12" textAlignment="CENTER" />
+                  <Separator orientation="VERTICAL" prefHeight="25.0" />
+                  <Label fx:id="currentLibrarianLoginLabel" alignment="CENTER" layoutX="78.0" layoutY="14.0" prefWidth="125.0" text="Login" textAlignment="CENTER" />
+                  <Separator layoutX="112.0" layoutY="10.0" orientation="VERTICAL" prefHeight="25.0" />
+                  <Label fx:id="currentLibrarianNameLabel" alignment="CENTER" layoutX="122.0" layoutY="14.0" prefWidth="225.0" text="Name" textAlignment="CENTER" />
+                  <Separator layoutX="251.0" layoutY="10.0" orientation="VERTICAL" prefHeight="25.0" />
+               </items>
+            </ToolBar>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="300.0">
+              <items>
+                <Button fx:id="logOutButton" mnemonicParsing="false" onMouseClicked="#onClickLogOutButton" text="Log Out" />
+                  <Separator orientation="VERTICAL" prefHeight="25.0" />
+                  <Button fx:id="registerNewUserButton" mnemonicParsing="false" onMouseClicked="#onClickRegisterNewUserButton" text="Register New User" />
+              </items>
+            </ToolBar>
+         </children>
+      </HBox>
+      <HBox prefHeight="125.0" prefWidth="800.0">
+         <children>
+            <AnchorPane prefHeight="100.0" prefWidth="350.0">
+               <children>
+                  <GridPane layoutX="100.0" layoutY="18.0" prefHeight="125.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="88.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="262.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Book Title:">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Author:" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Publisher:" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Status:" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Condition:" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="bookTitleLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="authorLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="publisherLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="statusLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="conditionLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+            <AnchorPane prefHeight="100.0" prefWidth="450.0">
+               <children>
+                  <GridPane layoutX="49.0" layoutY="18.0" prefHeight="125.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="136.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="163.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="72.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="79.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="ID:" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Book ID:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefWidth="60.0" text="Reader ID:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Supplier ID:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Owner ID:" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="idTextField" editable="false" onMouseClicked="#onClickTextFieldSelectAll" prefHeight="25.0" prefWidth="223.0" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="bookIdTextField" editable="false" onMouseClicked="#onClickTextFieldSelectAll" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="readerIdTextField" editable="false" onMouseClicked="#onClickTextFieldSelectAll" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <TextField fx:id="supplierIdTextField" editable="false" onMouseClicked="#onClickTextFieldSelectAll" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <TextField fx:id="ownerIdTextField" editable="false" onMouseClicked="#onClickTextFieldSelectAll" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label text="Start Date:">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="End Date:" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Open Exchange Date:" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Reader Login:" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Owner Login:" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="startDateLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="endDateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="openExchangeDateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="readerLoginLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="ownerLoginLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+         </children>
+      </HBox>
+      <TabPane prefHeight="405.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="allLibraryBooksTab" onSelectionChanged="#onSelectionChangedTabUpdate" text="All Library Books">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="800.0">
+                     <children>
+                        <TableView fx:id="allLibraryBooksTable1View" prefHeight="414.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="t1IdTableColumn" prefWidth="50.0" text="ID" />
+                            <TableColumn fx:id="t1BookTitleTableColumn" prefWidth="200.0" text="Book Title" />
+                              <TableColumn fx:id="t1AuthorTableColumn" prefWidth="200.0" text="Author" />
+                              <TableColumn fx:id="t1PublisherTableColumn" prefWidth="100.0" text="Publisher" />
+                              <TableColumn fx:id="t1PublishYearTableColumn" prefWidth="75.0" text="Publish Year" />
+                              <TableColumn fx:id="t1StatusTableColumn" prefWidth="75.0" text="Status" />
+                              <TableColumn fx:id="t1ConditionTableColumn" prefWidth="100.0" text="Condition" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="borrowingsTab" onSelectionChanged="#onSelectionChangedTabUpdate" text="Borrowings">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="800.0">
+                     <children>
+                        <TableView fx:id="borrowingsTable2View" prefHeight="414.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="t2IdTableColumn" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="t2BookIdTableColumn" prefWidth="50.0" text="Book ID" />
+                              <TableColumn fx:id="t2BookTitleTableColumn" prefWidth="240.0" text="Book Title" />
+                              <TableColumn fx:id="t2ReaderIdTableColumn" prefWidth="60.0" text="Reader ID" />
+                              <TableColumn fx:id="t2ReaderLoginTableColumn" prefWidth="150.0" text="Reader Login" />
+                              <TableColumn fx:id="t2StartDateTableColumn" prefWidth="125.0" text="Start Date" />
+                              <TableColumn fx:id="t2EndDateTableColumn" prefWidth="125.0" text="End Date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="exchangesTab" onSelectionChanged="#onSelectionChangedTabUpdate" text="Exchanges">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="800.0">
+                     <children>
+                        <TableView fx:id="exchangesTable3View" prefHeight="414.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="t3IdTableColumn" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="t3BookIdTableColumn" prefWidth="50.0" text="Book ID" />
+                              <TableColumn fx:id="t3BookTitleTableColumn" prefWidth="105.0" text="Book Title" />
+                              <TableColumn fx:id="t3OwnerIdTableColumn" prefWidth="60.0" text="Owner ID" />
+                              <TableColumn fx:id="t3OwnerLoginTableColumn" prefWidth="100.0" text="Owner Login" />
+                              <TableColumn fx:id="t3OpenExchangeTableColumn" prefWidth="125.0" text="Open Exchange Date" />
+                              <TableColumn fx:id="t3ReaderIdTableColumn" prefWidth="60.0" text="Reader ID" />
+                              <TableColumn fx:id="t3ReaderLoginTableColumn" prefWidth="100.0" text="Reader Login" />
+                              <TableColumn fx:id="t3StartDateTableColumn" prefWidth="75.0" text="Start Date" />
+                              <TableColumn fx:id="t3EndDateTableColumn" prefWidth="75.0" text="End Date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="orderingsTab" onSelectionChanged="#onSelectionChangedTabUpdate" text="Orderings">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="800.0">
+                     <children>
+                        <TableView fx:id="orderingsTable4View" prefHeight="414.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="t4IdTableColumn" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="t4BookIdTableColumn" prefWidth="50.0" text="Book ID" />
+                              <TableColumn fx:id="t4BookTitleTableColumn" prefWidth="240.0" text="Book Title" />
+                              <TableColumn fx:id="t4SupplierIdTableColumn" prefWidth="70.0" text="Supplier ID" />
+                              <TableColumn fx:id="t4SupplierLoginTableColumn" prefWidth="140.0" text="Supplier Login" />
+                              <TableColumn fx:id="t4StartDateTableColumn" prefWidth="125.0" text="Start Date" />
+                              <TableColumn fx:id="t4EndDateTableColumn" prefWidth="125.0" text="End Date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="requireConfirmationTab" onSelectionChanged="#onSelectionChangedTabUpdate" text="Require Confirmation">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="800.0">
+                     <children>
+                        <TableView fx:id="requireConfirmationTable5View" prefHeight="414.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="t5IdTableColumn" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="t5BookIdTableColumn" prefWidth="50.0" text="Book ID" />
+                              <TableColumn fx:id="t5BookTitleTableColumn" prefWidth="115.0" text="Book Title" />
+                              <TableColumn fx:id="t5OwnerIdTableColumn" prefWidth="60.0" text="Owner ID" />
+                              <TableColumn fx:id="t5OwnerLoginTableColumn" prefWidth="110.0" text="Owner Login" />
+                              <TableColumn fx:id="t5OpenExchangeDateTableColumn" prefWidth="125.0" text="Open Exchange Date" />
+                              <TableColumn fx:id="t5ReaderIdTableColumn" prefWidth="60.0" text="Reader ID" />
+                              <TableColumn fx:id="t5ReaderLoginTableColumn" prefWidth="110.0" text="Reader Login" />
+                              <TableColumn fx:id="t5StartDateTableColumn" prefWidth="65.0" text="Start Date" />
+                              <TableColumn fx:id="t5EndDateTableColumn" prefWidth="55.0" text="End Date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="800.0">
+         <children>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="800.0">
+               <items>
+                  <Button fx:id="closeExchangeButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onClickCloseExchange" text="Close Exchange" />
+                  <Button fx:id="confirmExchangeButton" layoutX="83.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onClickConfirmExchange" text="Confirm Exchange" />
+                  <Separator layoutX="561.0" layoutY="10.0" orientation="VERTICAL" prefHeight="25.0" />
+                  <Button fx:id="closeBorrowingButton" mnemonicParsing="false" onMouseClicked="#onClickCloseBorrowing" text="Close Borrowing" />
+                  <Button fx:id="confirmBorrowingButton" mnemonicParsing="false" onMouseClicked="#onClickConfirmBorrowingButton" text="Confirm Borrowing" />
+                  <Separator layoutX="229.0" layoutY="10.0" orientation="VERTICAL" prefHeight="25.0" />
+                  <Button fx:id="orderTheBookButton" layoutX="83.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onClickOrderTheBookButton" text="Order The Book" />
+                  <Separator layoutX="73.0" layoutY="10.0" orientation="VERTICAL" prefHeight="25.0" />
+                  <Button fx:id="addNewBookButton" layoutX="201.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onClickAddNewBookButton" text="Add New Book" />
+               </items>
+            </ToolBar>
+         </children>
+      </HBox>
+   </children>
+</VBox>
