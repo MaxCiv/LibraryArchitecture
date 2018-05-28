@@ -4,11 +4,16 @@ import com.maxciv.businesslogic.entities.Book;
 import com.maxciv.businesslogic.entities.libraryrecords.BookBorrow;
 import com.maxciv.businesslogic.entities.libraryrecords.BookExchange;
 import com.maxciv.businesslogic.entities.libraryrecords.BookOrder;
+import com.maxciv.businesslogic.entities.users.Librarian;
+import com.maxciv.businesslogic.entities.users.Reader;
+import com.maxciv.businesslogic.entities.users.Supplier;
 import com.maxciv.businesslogic.entities.users.User;
 import com.maxciv.storage.mappers.*;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MappersRepository implements Repository {
 
@@ -52,6 +57,47 @@ public class MappersRepository implements Repository {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public List<Book> getAllBooks() {
+        try {
+            return new ArrayList<>(bookMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        try {
+            return new ArrayList<>(userMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public void addNewUser(String login, String password, String name, String role) {
+        User newUser = null;
+        switch (role) {
+            case "Librarian":
+                newUser = new Librarian(-1, login, DigestUtils.sha1Hex(password), name);
+                break;
+            case "Reader":
+                newUser = new Reader(-1, login, DigestUtils.sha1Hex(password), name);
+                break;
+            case "Supplier":
+                newUser = new Supplier(-1, login, DigestUtils.sha1Hex(password), name);
+                break;
+        }
+        try {
+            userMapper.addUser(newUser);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

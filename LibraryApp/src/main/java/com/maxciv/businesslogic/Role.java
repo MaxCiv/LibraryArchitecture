@@ -41,4 +41,16 @@ public enum Role {
             return READER;
         }
     }
+
+    public static Role valueOfString(String role) {
+        switch (role) {
+            case "Librarian":
+                return LIBRARIAN;
+            case "Reader":
+                return READER;
+            case "Supplier":
+                return SUPPLIER;
+        }
+        return READER;
+    }
 }

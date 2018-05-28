@@ -28,7 +28,7 @@ public abstract class AbstractUser implements User {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (obj == null) return false;
         User otherUser = (User) obj;
         return login.equals(otherUser.getLogin());
     }

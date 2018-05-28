@@ -8,6 +8,7 @@ import com.maxciv.businesslogic.entities.users.User;
 import com.maxciv.storage.DataGateway;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -120,6 +121,7 @@ public class UserMapper implements Mapper<User> {
             preparedStatement.setInt(3, item.getRole().getRoleId());
             preparedStatement.setString(4, item.getLogin());
             preparedStatement.execute();
+            loadedUserMap.replace(item.getId(), item);
         } else {
             addUser(item);
         }

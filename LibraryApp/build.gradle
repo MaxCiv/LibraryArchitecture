@@ -48,3 +48,7 @@ jar {
         attributes 'Main-Class': 'com.maxciv.Main'
     }
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
+}
