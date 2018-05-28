@@ -121,7 +121,9 @@ public class UserMapper implements Mapper<User> {
             preparedStatement.setInt(3, item.getRole().getRoleId());
             preparedStatement.setString(4, item.getLogin());
             preparedStatement.execute();
-            loadedUserMap.replace(item.getId(), item);
+            int realId = findByLogin(item.getLogin()).getId();
+            item.setId(realId);
+            loadedUserMap.replace(realId, item);
         } else {
             addUser(item);
         }

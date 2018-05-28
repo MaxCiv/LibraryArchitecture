@@ -104,6 +104,35 @@ public class MainLibrarianViewController {
         usersTable6View.setItems(usersObservableList);
     }
 
+    private void updateAllLibraryBooksTable() {
+        allLibraryBooksObservableList.removeAll(allLibraryBooksObservableList);
+        try {
+            allLibraryBooksObservableList.addAll(facade.getAllBooks());
+        } catch (NotFoundException e) {
+            e.printStackTrace();    //TODO
+        }
+    }
+
+    private void updateUsersTableTable() {
+        usersObservableList.removeAll(usersObservableList);
+        try {
+            usersObservableList.addAll(facade.getAllUsers());
+        } catch (NotFoundException e) {
+            e.printStackTrace();    //TODO
+        }
+    }
+
+    @FXML
+    public void onSelectionChangedTabUpdate(Event event) {
+
+    }
+
+    @FXML
+    public void onClickRefreshButton(ActionEvent actionEvent) {
+        updateAllLibraryBooksTable();
+        updateUsersTableTable();
+    }
+
     @FXML
     public void onClickLogOutButton(MouseEvent mouseEvent) {
 
@@ -129,45 +158,6 @@ public class MainLibrarianViewController {
     @FXML
     public void onClickTextFieldSelectAll(MouseEvent mouseEvent) {
 
-    }
-
-    @FXML
-    public void onSelectionChangedTabUpdate(Event event) {
-
-    }
-
-    @FXML
-    public void onClickRefreshButton(ActionEvent actionEvent) {
-        allLibraryBooksObservableList.removeAll(allLibraryBooksObservableList);
-        try {
-            allLibraryBooksObservableList.addAll(facade.getAllBooks());
-        } catch (NotFoundException e) {
-            e.printStackTrace();    //TODO
-        }
-//        allLibraryBooksTable1View.setItems(allLibraryBooksObservableList);
-//        allLibraryBooksTable1View.refresh();
-
-        usersObservableList.removeAll(usersObservableList);
-        try {
-            usersObservableList.addAll(facade.getAllUsers());
-        } catch (NotFoundException e) {
-            e.printStackTrace();    //TODO
-        }
-//        usersTable6View.setItems(usersObservableList);
-//        usersTable6View.refresh();
-
-//        allLibraryBooksTable1View.getColumns().get(0).setVisible(false);
-//        allLibraryBooksTable1View.getColumns().get(0).setVisible(true);
-//
-//        usersTable6View.getColumns().get(3).setVisible(false);
-//        usersTable6View.getColumns().get(3).setVisible(true);
-
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//        alert.setTitle("Test Connection");
-//        alert.setHeaderText("Results:");
-//        alert.setContentText("Connect to the database successfully!");
-//
-//        alert.showAndWait();
     }
 
     @FXML
