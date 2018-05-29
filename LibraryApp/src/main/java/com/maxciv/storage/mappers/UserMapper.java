@@ -26,7 +26,7 @@ public class UserMapper implements Mapper<User> {
         if (loadedUserMap.values().contains(user)) {
             update(user);
         } else {
-            String insertSQL = "INSERT INTO user(login, password, name, role) VALUES (?, ?, ?, ?);";
+            String insertSQL = "INSERT INTO user(login, user.password, user.name, role) VALUES (?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, user.getLogin());
             preparedStatement.setString(2, user.getPassword());
@@ -114,7 +114,7 @@ public class UserMapper implements Mapper<User> {
     @Override
     public void update(User item) throws SQLException {
         if (loadedUserMap.values().contains(item)) {
-            String updateSQL = "UPDATE user SET  password = ?, name = ?, role = ?  WHERE login = ?;";
+            String updateSQL = "UPDATE user SET  user.password = ?, user.name = ?, role = ?  WHERE login = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
             preparedStatement.setString(1, item.getPassword());
             preparedStatement.setString(2, item.getName());

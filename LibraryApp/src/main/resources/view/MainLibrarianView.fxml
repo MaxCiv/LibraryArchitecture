@@ -10,6 +10,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -40,7 +41,7 @@
                         <Separator orientation="VERTICAL" prefHeight="25.0" />
                         <Button fx:id="registerNewUserButton" mnemonicParsing="false" onMouseClicked="#onClickRegisterNewUserButton" text="Register New User" />
                         <Separator layoutX="73.0" layoutY="10.0" orientation="VERTICAL" prefHeight="25.0" />
-                        <Button fx:id="refreshButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickRefreshButton" onMouseClicked="#onClickLogOutButton" text="Refresh" />
+                        <Button fx:id="refreshButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickRefreshButton" text="Refresh" />
                     </items>
                   </ToolBar>
                </children>
@@ -192,12 +193,12 @@
                               <TableView fx:id="allLibraryBooksTable1View" prefHeight="414.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
                                   <TableColumn fx:id="t1IdTableColumn" prefWidth="50.0" text="ID" />
-                                  <TableColumn fx:id="t1BookTitleTableColumn" prefWidth="200.0" text="Book Title" />
-                                    <TableColumn fx:id="t1AuthorTableColumn" prefWidth="200.0" text="Author" />
+                                  <TableColumn fx:id="t1BookTitleTableColumn" prefWidth="190.0" text="Book Title" />
+                                    <TableColumn fx:id="t1AuthorTableColumn" prefWidth="190.0" text="Author" />
                                     <TableColumn fx:id="t1PublisherTableColumn" prefWidth="100.0" text="Publisher" />
                                     <TableColumn fx:id="t1PublishYearTableColumn" prefWidth="75.0" text="Publish Year" />
                                     <TableColumn fx:id="t1StatusTableColumn" prefWidth="75.0" text="Status" />
-                                    <TableColumn fx:id="t1ConditionTableColumn" prefWidth="100.0" text="Condition" />
+                                    <TableColumn fx:id="t1ConditionTableColumn" prefWidth="120.0" text="Condition" />
                                 </columns>
                               </TableView>
                            </children>
@@ -272,14 +273,12 @@
                                  <columns>
                                     <TableColumn fx:id="t5IdTableColumn" prefWidth="50.0" text="ID" />
                                     <TableColumn fx:id="t5BookIdTableColumn" prefWidth="50.0" text="Book ID" />
-                                    <TableColumn fx:id="t5BookTitleTableColumn" prefWidth="115.0" text="Book Title" />
+                                    <TableColumn fx:id="t5BookTitleTableColumn" prefWidth="205.0" text="Book Title" />
                                     <TableColumn fx:id="t5OwnerIdTableColumn" prefWidth="60.0" text="Owner ID" />
-                                    <TableColumn fx:id="t5OwnerLoginTableColumn" prefWidth="110.0" text="Owner Login" />
+                                    <TableColumn fx:id="t5OwnerLoginTableColumn" prefWidth="125.0" text="Owner Login" />
                                     <TableColumn fx:id="t5OpenExchangeDateTableColumn" prefWidth="125.0" text="Open Exchange Date" />
                                     <TableColumn fx:id="t5ReaderIdTableColumn" prefWidth="60.0" text="Reader ID" />
-                                    <TableColumn fx:id="t5ReaderLoginTableColumn" prefWidth="110.0" text="Reader Login" />
-                                    <TableColumn fx:id="t5StartDateTableColumn" prefWidth="65.0" text="Start Date" />
-                                    <TableColumn fx:id="t5EndDateTableColumn" prefWidth="55.0" text="End Date" />
+                                    <TableColumn fx:id="t5ReaderLoginTableColumn" prefWidth="125.0" text="Reader Login" />
                                  </columns>
                               </TableView>
                            </children>
@@ -306,7 +305,12 @@
             </TabPane>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="800.0">
                <children>
-                  <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="800.0">
+                  <ToolBar prefHeight="35.0" prefWidth="50.0">
+                     <items>
+                        <ImageView fx:id="infoImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                     </items>
+                  </ToolBar>
+                  <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="750.0">
                      <items>
                         <Button fx:id="closeExchangeButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onClickCloseExchange" text="Close Exchange" />
                         <Button fx:id="confirmExchangeButton" layoutX="83.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#onClickConfirmExchange" text="Confirm Exchange" />

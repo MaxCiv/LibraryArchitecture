@@ -21,22 +21,22 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="titleTextField" alignment="CENTER" promptText="Title">
+            <TextField fx:id="titleTextField" alignment="CENTER" onAction="#onClickAddButton" promptText="Title" text="z1">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="authorTextField" alignment="CENTER" layoutX="40.0" layoutY="62.0" promptText="Author">
+            <TextField fx:id="authorTextField" alignment="CENTER" layoutX="40.0" layoutY="62.0" onAction="#onClickAddButton" promptText="Author" text="z1">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="publisherTextField" alignment="CENTER" layoutX="40.0" layoutY="102.0" promptText="Publisher">
+            <TextField fx:id="publisherTextField" alignment="CENTER" layoutX="40.0" layoutY="102.0" onAction="#onClickAddButton" promptText="Publisher" text="z1">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="publishYearTextField" alignment="CENTER" layoutX="40.0" layoutY="182.0" promptText="Publish Year">
+            <TextField fx:id="publishYearTextField" alignment="CENTER" layoutX="40.0" layoutY="182.0" onAction="#onClickAddButton" promptText="Publish Year" text="1111">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
@@ -49,7 +49,7 @@
                   <Insets />
                </opaqueInsets>
             </ChoiceBox>
-            <TextField fx:id="ownerIdTextField" alignment="CENTER" layoutX="40.0" layoutY="182.0" promptText="Owner ID">
+            <TextField fx:id="ownerIdTextField" alignment="CENTER" layoutX="40.0" layoutY="182.0" onAction="#onClickAddButton" promptText="Owner ID" text="2">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
@@ -59,7 +59,7 @@
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </Label>
-            <Button fx:id="addButton" mnemonicParsing="false" onMouseClicked="#onClickAddButton" prefWidth="220.0" text="Add" textAlignment="CENTER">
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#onClickAddButton" onMouseClicked="#onClickAddButton" prefWidth="220.0" text="Add" textAlignment="CENTER">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>

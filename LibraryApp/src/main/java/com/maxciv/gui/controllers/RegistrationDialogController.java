@@ -36,7 +36,7 @@ public class RegistrationDialogController {
     }
 
     @FXML
-    public void onClickRegisterButton(ActionEvent actionEvent) {
+    public void onClickRegisterButton() {
         String login, name, role, password, repeatPassword;
         login = loginTextField.getText();
         name = nameTextField.getText();

@@ -41,4 +41,16 @@ public enum Status {
             return LIBRARY;
         }
     }
+
+    public static Status valueOfString(String status) {
+        switch (status) {
+            case "Library book":
+                return LIBRARY;
+            case "Exchanging book":
+                return EXCHANGE;
+            case "Ordered book":
+                return ORDER;
+        }
+        return LIBRARY;
+    }
 }

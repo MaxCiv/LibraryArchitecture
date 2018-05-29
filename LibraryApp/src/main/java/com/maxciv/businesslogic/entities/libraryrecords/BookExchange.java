@@ -8,12 +8,16 @@ import java.util.Date;
 public class BookExchange extends AbstractBookRecord {
 
     private Reader owner;
-    private Date openExchangeDate;
+    private Date openExchangeDate = null;
     private Reader reader = null;
 
-    public BookExchange(int id, Book book, Reader owner, Date openExchangeDate) {
+    public BookExchange(int id, Book book, Reader owner) {
         super(id, book);
         this.owner = owner;
+    }
+
+    public BookExchange(int id, Book book, Reader owner, Date openExchangeDate) {
+        this(id, book, owner);
         this.openExchangeDate = openExchangeDate;
     }
 

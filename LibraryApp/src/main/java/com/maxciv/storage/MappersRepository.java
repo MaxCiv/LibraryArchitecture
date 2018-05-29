@@ -4,6 +4,7 @@ import com.maxciv.businesslogic.entities.Book;
 import com.maxciv.businesslogic.entities.libraryrecords.BookBorrow;
 import com.maxciv.businesslogic.entities.libraryrecords.BookExchange;
 import com.maxciv.businesslogic.entities.libraryrecords.BookOrder;
+import com.maxciv.businesslogic.entities.libraryrecords.BookRecord;
 import com.maxciv.businesslogic.entities.users.Librarian;
 import com.maxciv.businesslogic.entities.users.Reader;
 import com.maxciv.businesslogic.entities.users.Supplier;
@@ -60,9 +61,69 @@ public class MappersRepository implements Repository {
     }
 
     @Override
+    public Book findBookById(int id) {
+        try {
+            return bookMapper.findById(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public List<Book> getAllBooks() {
         try {
             return new ArrayList<>(bookMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<BookBorrow> getAllBorrows() {
+        try {
+            return new ArrayList<>(bookBorrowMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<BookExchange> getAllExchanges() {
+        try {
+            return new ArrayList<>(bookExchangeMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<BookOrder> getAllOrderings() {
+        try {
+            return new ArrayList<>(bookOrderMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<BookRecord> getAllRequireConfirmation() {
+        try {
+            List<BookBorrow> bookBorrows = new ArrayList<>(bookBorrowMapper.findAll().values());
+            List<BookExchange> bookExchanges = new ArrayList<>(bookExchangeMapper.findAll().values());
+
+            List<BookRecord> bookRecords = new ArrayList<>();
+            for (BookBorrow bookBorrow : bookBorrows) {
+                if (bookBorrow.getStartDate() == null) bookRecords.add(bookBorrow);
+            }
+            for (BookExchange bookExchange : bookExchanges) {
+                if (bookExchange.getReader() != null && bookExchange.getStartDate() == null) bookRecords.add(bookExchange);
+            }
+            return bookRecords;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -80,21 +141,45 @@ public class MappersRepository implements Repository {
     }
 
     @Override
-    public void addNewUser(String login, String password, String name, String role) {
-        User newUser = null;
-        switch (role) {
-            case "Librarian":
-                newUser = new Librarian(-1, login, DigestUtils.sha1Hex(password), name);
-                break;
-            case "Reader":
-                newUser = new Reader(-1, login, DigestUtils.sha1Hex(password), name);
-                break;
-            case "Supplier":
-                newUser = new Supplier(-1, login, DigestUtils.sha1Hex(password), name);
-                break;
-        }
+    public void addNewUser(User newUser) {
         try {
             userMapper.addUser(newUser);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void addNewBook(Book book) {
+        try {
+            bookMapper.addBook(book);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void openNewExchange(BookExchange bookExchange) {
+        try {
+            bookExchangeMapper.addBookExchange(bookExchange);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void openNewOrder(BookOrder bookOrder) {
+        try {
+            bookOrderMapper.addBookOrder(bookOrder);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateExchange(BookExchange bookExchange) {
+        try {
+            bookExchangeMapper.update(bookExchange);
         } catch (SQLException e) {
             e.printStackTrace();
         }

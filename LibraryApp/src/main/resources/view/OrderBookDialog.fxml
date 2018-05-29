@@ -20,12 +20,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="bookIdTextField" alignment="CENTER" promptText="Book ID">
+            <TextField fx:id="bookIdTextField" alignment="CENTER" onAction="#onClickOpenNewOrderButton" promptText="Book ID">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="supplierIdTextField" alignment="CENTER" layoutX="40.0" layoutY="62.0" promptText="Supplier ID">
+            <TextField fx:id="supplierIdTextField" alignment="CENTER" layoutX="40.0" layoutY="62.0" onAction="#onClickOpenNewOrderButton" promptText="Supplier ID">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
@@ -35,7 +35,7 @@
                   <Insets left="30.0" right="30.0" top="45.0" />
                </VBox.margin>
             </Label>
-            <Button fx:id="openNewOrderButton" mnemonicParsing="false" onMouseClicked="#onClickOpenNewOrderButton" prefWidth="220.0" text="Open New Order" textAlignment="CENTER">
+            <Button fx:id="openNewOrderButton" mnemonicParsing="false" onAction="#onClickOpenNewOrderButton" prefWidth="220.0" text="Open New Order" textAlignment="CENTER">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="30.0" />
                </VBox.margin>

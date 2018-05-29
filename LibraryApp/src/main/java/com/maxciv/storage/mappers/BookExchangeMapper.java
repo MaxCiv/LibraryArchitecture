@@ -35,9 +35,14 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
             preparedStatement.setInt(1, bookExchange.getBook().getId());
             preparedStatement.setInt(2, bookExchange.getOwner().getId());
             preparedStatement.setString(3, Util.getStringFromFormattedDate(bookExchange.getOpenExchangeDate()));
-            preparedStatement.setInt(4, bookExchange.getReader().getId());
+            if (bookExchange.getReader() == null) {
+                preparedStatement.setNull(4, Types.INTEGER);
+            } else {
+                preparedStatement.setInt(4, bookExchange.getReader().getId());
+            }
             preparedStatement.setString(5, Util.getStringFromFormattedDate(bookExchange.getStartDate()));
             preparedStatement.setString(6, Util.getStringFromFormattedDate(bookExchange.getEndDate()));
+
             preparedStatement.execute();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
 
@@ -47,9 +52,9 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
 
             loadedBookExchangeMap.put(bookExchange.getId(), bookExchange);
 
-            bookMapper.update(bookExchange.getBook());
-            userMapper.update(bookExchange.getOwner());
-            if (bookExchange.getReader() != null) userMapper.update(bookExchange.getReader());
+//            bookMapper.update(bookExchange.getBook());
+//            userMapper.update(bookExchange.getOwner());
+//            if (bookExchange.getReader() != null) userMapper.update(bookExchange.getReader());
         }
     }
 
@@ -114,14 +119,21 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
             preparedStatement.setInt(2, item.getOwner().getId());
             preparedStatement.setString(3, Util.getStringFromFormattedDate(item.getOpenExchangeDate()));
             preparedStatement.setInt(4, item.getReader().getId());
+            if (item.getReader() == null) {
+                preparedStatement.setNull(4, Types.INTEGER);
+            } else {
+                preparedStatement.setInt(4, item.getReader().getId());
+            }
             preparedStatement.setString(5, Util.getStringFromFormattedDate(item.getStartDate()));
             preparedStatement.setString(6, Util.getStringFromFormattedDate(item.getEndDate()));
             preparedStatement.setInt(7, item.getId());
             preparedStatement.execute();
 
-            bookMapper.update(item.getBook());
-            userMapper.update(item.getOwner());
-            if (item.getReader() != null) userMapper.update(item.getReader());
+            loadedBookExchangeMap.replace(item.getId(), item);
+
+//            bookMapper.update(item.getBook());
+//            userMapper.update(item.getOwner());
+//            if (item.getReader() != null) userMapper.update(item.getReader());
         } else {
             addBookExchange(item);
         }

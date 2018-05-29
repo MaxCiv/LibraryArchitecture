@@ -80,24 +80,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainLibrarianViewController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainLibrarianViewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/MainLibrarianViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="118" column="61" lean-forward="true" selection-start-line="118" selection-start-column="61" selection-end-line="118" selection-end-column="61" />
+            <state relative-caret-position="396">
+              <caret line="457" column="9" lean-forward="false" selection-start-line="457" selection-start-column="9" selection-end-line="457" selection-end-column="9" />
+              <folding>
+                <element signature="e#7254#7479#0" expanded="false" />
+                <element signature="e#7583#7803#0" expanded="false" />
+                <element signature="e#7906#8125#0" expanded="false" />
+                <element signature="e#8228#8447#0" expanded="false" />
+                <element signature="e#8560#8789#0" expanded="false" />
+                <element signature="e#8888#9103#0" expanded="false" />
+                <element signature="method#setUpAllLibraryBooksTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#setUpBorrowingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#setUpExchangesTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#setUpOrderingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#setUpRequireConfirmationTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#setUpUsersTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#updateAllLibraryBooksTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#updateBorrowingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#updateExchangesTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#updateOrderingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#updateRequireConfirmationTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#updateUsersTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="e#20104#20105#0" expanded="true" />
+                <element signature="e#20142#20143#0" expanded="true" />
+                <element signature="method#onClickRegisterNewUserButton#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="e#20784#20785#0" expanded="true" />
+                <element signature="e#20847#20848#0" expanded="true" />
+                <element signature="method#showInfoAllLibraryBooksTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#showInfoBorrowingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#showInfoExchangesTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#showInfoOrderingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#showInfoRequireConfirmationTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#showInfoUsersTable#0;class#MainLibrarianViewController#0" expanded="false" />
+                <element signature="method#clearAllLabelsInfo#0;class#MainLibrarianViewController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddBookDialogController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/AddBookDialogController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="72" column="50" lean-forward="true" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationDialogController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RegistrationDialogController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/RegistrationDialogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="402">
+              <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,11 +144,9 @@
       <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/facades/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="32" column="111" lean-forward="false" selection-start-line="32" selection-start-column="111" selection-end-line="32" selection-end-column="111" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,14 +154,44 @@
       <file leaf-file-name="CommonFacade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/facades/CommonFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="63" column="42" lean-forward="false" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+            <state relative-caret-position="583">
+              <caret line="117" column="118" lean-forward="false" selection-start-line="117" selection-start-column="118" selection-end-line="117" selection-end-column="118" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#445#446#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-                <element signature="e#2529#2530#0" expanded="true" />
-                <element signature="e#2567#2568#0" expanded="true" />
+                <element signature="e#871#872#0" expanded="true" />
+                <element signature="e#923#924#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Librarian.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/Librarian.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+              <folding>
+                <element signature="e#3271#3272#0" expanded="true" />
+                <element signature="e#3308#3309#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="119" column="59" lean-forward="false" selection-start-line="119" selection-start-column="59" selection-end-line="119" selection-end-column="59" />
+              <folding>
+                <marker date="1527630398370" expanded="true" signature="964:1039" ph="INSERT INTO User... " />
+                <marker date="1527630398370" expanded="true" signature="2015:2046" ph="SELECT * FRO... User" />
+                <marker date="1527630398370" expanded="true" signature="2946:2980" ph="SELECT * FRO... User" />
+                <marker date="1527630398370" expanded="true" signature="3731:3746" ph="SELECT USERS... USERS" />
+                <marker date="1527630398370" expanded="true" signature="3731:3750" ph="SELECT User.... User" />
+                <marker date="1527630398370" expanded="true" signature="4197:4273" ph="UPDATE User... " />
+                <marker date="1527630398370" expanded="true" signature="5983:6059" ph="SELECT COUNT... ExchangeBooks" />
+                <marker date="1527630398370" expanded="true" signature="6459:6536" ph="SELECT COUNT... ExchangeBooks" />
               </folding>
             </state>
           </provider>
@@ -133,11 +200,9 @@
       <file leaf-file-name="Repository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/Repository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="77" lean-forward="false" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,38 +210,9 @@
       <file leaf-file-name="MappersRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/MappersRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="74" column="49" lean-forward="false" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
+            <state relative-caret-position="296">
+              <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="125" column="48" lean-forward="true" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
-              <folding>
-                <marker date="1527546614432" expanded="true" signature="964:1029" ph="INSERT INTO User... " />
-                <marker date="1527546614432" expanded="true" signature="2005:2036" ph="SELECT * FRO... User" />
-                <marker date="1527546614432" expanded="true" signature="2936:2970" ph="SELECT * FRO... User" />
-                <marker date="1527546614432" expanded="true" signature="3721:3736" ph="SELECT USERS... USERS" />
-                <marker date="1527546614432" expanded="true" signature="3721:3740" ph="SELECT User.... User" />
-                <marker date="1527546614432" expanded="true" signature="4187:4253" ph="UPDATE User... " />
-                <marker date="1527546614432" expanded="true" signature="5963:6039" ph="SELECT COUNT... ExchangeBooks" />
-                <marker date="1527546614432" expanded="true" signature="6439:6516" ph="SELECT COUNT... ExchangeBooks" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -194,6 +230,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>info</find>
+    </findStrings>
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -407,7 +448,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="3049536651889" />
+        <entry key="$PROJECT_DIR$" value="3049560908648" />
         <entry key="$PROJECT_DIR$/build.gradle" value="849024944" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="947070939" />
       </map>
@@ -610,7 +651,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/AbstractUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/Supplier.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/Reader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/Librarian.java" />
@@ -618,7 +658,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/OrderBookRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/LibraryBookRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/Supplier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/Librarian.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/StatusBookRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/AbstractMapper.java" />
@@ -628,19 +667,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookOrder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/AbstractBookRecord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookExchange.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/Condition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookExchangeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookBorrowMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookOrderMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/LogInView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/BusinessLogicException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/LibraryAppException.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/LogInDialog.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/AddBookDialogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/MainReaderViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/MainSupplierViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/OrderBookDialogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/exceptions/LogInErrorException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/exceptions/NotFoundException.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
@@ -650,17 +685,23 @@
         <option value="$PROJECT_DIR$/src/main/resources/view/RegistrationDialog.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/Reader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/Repository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/MappersRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/RegistrationDialogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/AbstractUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookExchange.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/RegistrationDialogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/Status.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookExchangeMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/view/MainLibrarianView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/Repository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/MappersRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/MainLibrarianViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/OrderBookDialogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/AddBookDialogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/facades/Facade.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/facades/CommonFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/view/MainLibrarianView.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/MainLibrarianViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/Librarian.java" />
       </list>
     </option>
   </component>
@@ -691,8 +732,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -866,6 +905,8 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -885,8 +926,8 @@
       <recent name="com.maxciv.businesslogic.exceptions" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Documents\LibraryArchitecture\LibraryApp\src\main\java\com\maxciv" />
       <recent name="E:\Documents\LibraryArchitecture\LibraryApp\src\main\resources" />
+      <recent name="E:\Documents\LibraryArchitecture\LibraryApp\src\main\java\com\maxciv" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1110,11 +1151,13 @@
       <workItem from="1527523860701" duration="63000" />
       <workItem from="1527524162071" duration="21570000" />
       <workItem from="1527547447033" duration="606000" />
+      <workItem from="1527576767040" duration="17105000" />
+      <workItem from="1527613895687" duration="17533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111441000" />
+    <option name="totallyTimeSpent" value="146079000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1127,6 +1170,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1137,7 +1181,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25506938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20309168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12793177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1163,94 +1207,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookExchange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/AbstractBookRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="70" lean-forward="true" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/createDB.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="144" column="0" lean-forward="true" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookExchangeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="110" column="52" lean-forward="false" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookBorrowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="100" column="51" lean-forward="false" selection-start-line="100" selection-start-column="51" selection-end-line="100" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/SomeClass.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/Condition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="45" column="5" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="114" column="13" lean-forward="false" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/AddBookDialog.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="258" lean-forward="true" selection-start-line="11" selection-start-column="258" selection-end-line="11" selection-end-column="258" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/AddBookDialogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/MainReaderView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1287,24 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/OrderBookDialog.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="260" lean-forward="true" selection-start-line="10" selection-start-column="260" selection-end-line="10" selection-end-column="260" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/OrderBookDialogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/javafx.graphics/javafx/application/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -1321,13 +1264,6 @@
         <state relative-caret-position="646">
           <caret line="38" column="98" lean-forward="false" selection-start-line="38" selection-start-column="98" selection-end-line="38" selection-end-column="98" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/exceptions/LibraryAppException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1356,7 +1292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="530">
           <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1373,13 +1308,6 @@
         <state relative-caret-position="193">
           <caret line="3875" column="0" lean-forward="false" selection-start-line="3875" selection-start-column="0" selection-end-line="3875" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/Status.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1412,39 +1340,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/Librarian.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#209#210#0" expanded="false" />
-            <element signature="e#257#258#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="78" column="9" lean-forward="false" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1463,54 +1362,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/Repository.java">
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/Collection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="77" lean-forward="false" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/MainLibrarianView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="33" column="63" lean-forward="false" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+        <state relative-caret-position="224">
+          <caret line="178" column="12" lean-forward="false" selection-start-line="178" selection-start-column="12" selection-end-line="178" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/facades/Facade.java">
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/javafx.controls/javafx/scene/control/Tooltip.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state relative-caret-position="224">
+          <caret line="161" column="11" lean-forward="false" selection-start-line="161" selection-start-column="11" selection-end-line="161" selection-end-column="11" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#5402#5403#0" expanded="false" />
+            <element signature="e#5428#5429#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/facades/CommonFacade.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="63" column="42" lean-forward="false" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#2529#2530#0" expanded="true" />
-            <element signature="e#2567#2568#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/AddBookDialog.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="85" lean-forward="false" selection-start-line="61" selection-start-column="85" selection-end-line="61" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="768" column="22" lean-forward="false" selection-start-line="768" selection-start-column="22" selection-end-line="768" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="44" column="4" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/Status.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookOrderMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-850">
+        <state relative-caret-position="17">
           <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="61" />
           <folding>
             <marker date="1527438161390" expanded="true" signature="1112:1198" ph="INSERT INTO orderbooks... " />
@@ -1521,67 +1437,265 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/RegistrationDialogController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+        <state relative-caret-position="323">
+          <caret line="26" column="122" lean-forward="false" selection-start-line="26" selection-start-column="122" selection-end-line="26" selection-end-column="122" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1527608424657" expanded="true" signature="835:946" ph="INSERT INTO book... " />
+            <marker date="1527608424657" expanded="true" signature="2066:2097" ph="SELECT * FRO... book" />
+            <marker date="1527608424657" expanded="true" signature="3037:3056" ph="SELECT id FR... book" />
+            <marker date="1527608424657" expanded="true" signature="3503:3625" ph="UPDATE book... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/MappersRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookExchangeMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="74" column="49" lean-forward="false" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
+        <state relative-caret-position="1972">
+          <caret line="125" column="13" lean-forward="false" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
+          <folding>
+            <marker date="1527609317870" expanded="true" signature="1174:1297" ph="INSERT INTO exchangebooks... " />
+            <marker date="1527609317870" expanded="true" signature="3012:3052" ph="SELECT * FRO... exchangebooks" />
+            <marker date="1527609317870" expanded="true" signature="4391:4419" ph="SELECT id FR... exchangebooks" />
+            <marker date="1527609317870" expanded="true" signature="4898:5032" ph="UPDATE exchangebooks... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/javafx.base/javafx/util/Callback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="178" column="12" lean-forward="false" selection-start-line="178" selection-start-column="12" selection-end-line="178" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/AbstractBookRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="68">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookBorrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/libraryrecords/BookExchange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/BookBorrowMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="83" column="36" lean-forward="false" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+          <folding>
+            <marker date="1527438161436" expanded="true" signature="1120:1206" ph="INSERT INTO librarybooks... " />
+            <marker date="1527438161436" expanded="true" signature="2447:2486" ph="SELECT * FRO... librarybooks" />
+            <marker date="1527438161436" expanded="true" signature="3486:3513" ph="SELECT id FR... librarybooks" />
+            <marker date="1527438161436" expanded="true" signature="3984:4079" ph="UPDATE librarybooks... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/MainLibrarianView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="141" column="100" lean-forward="false" selection-start-line="141" selection-start-column="100" selection-end-line="141" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/OrderBookDialog.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="71" column="49" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="71" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/mappers/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="125" column="48" lean-forward="true" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
+        <state relative-caret-position="435">
+          <caret line="119" column="59" lean-forward="false" selection-start-line="119" selection-start-column="59" selection-end-line="119" selection-end-column="59" />
           <folding>
-            <marker date="1527546614432" expanded="true" signature="964:1029" ph="INSERT INTO User... " />
-            <marker date="1527546614432" expanded="true" signature="2005:2036" ph="SELECT * FRO... User" />
-            <marker date="1527546614432" expanded="true" signature="2936:2970" ph="SELECT * FRO... User" />
-            <marker date="1527546614432" expanded="true" signature="3721:3736" ph="SELECT USERS... USERS" />
-            <marker date="1527546614432" expanded="true" signature="3721:3740" ph="SELECT User.... User" />
-            <marker date="1527546614432" expanded="true" signature="4187:4253" ph="UPDATE User... " />
-            <marker date="1527546614432" expanded="true" signature="5963:6039" ph="SELECT COUNT... ExchangeBooks" />
-            <marker date="1527546614432" expanded="true" signature="6439:6516" ph="SELECT COUNT... ExchangeBooks" />
+            <marker date="1527630398370" expanded="true" signature="964:1039" ph="INSERT INTO User... " />
+            <marker date="1527630398370" expanded="true" signature="2015:2046" ph="SELECT * FRO... User" />
+            <marker date="1527630398370" expanded="true" signature="2946:2980" ph="SELECT * FRO... User" />
+            <marker date="1527630398370" expanded="true" signature="3731:3746" ph="SELECT USERS... USERS" />
+            <marker date="1527630398370" expanded="true" signature="3731:3750" ph="SELECT User.... User" />
+            <marker date="1527630398370" expanded="true" signature="4197:4273" ph="UPDATE User... " />
+            <marker date="1527630398370" expanded="true" signature="5983:6059" ph="SELECT COUNT... ExchangeBooks" />
+            <marker date="1527630398370" expanded="true" signature="6459:6536" ph="SELECT COUNT... ExchangeBooks" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/exceptions/LibraryAppException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/storage/MappersRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/OrderBookDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding>
+            <element signature="e#593#594#0" expanded="false" />
+            <element signature="e#631#632#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/facades/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="32" column="111" lean-forward="false" selection-start-line="32" selection-start-column="111" selection-end-line="32" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/facades/CommonFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="117" column="118" lean-forward="false" selection-start-line="117" selection-start-column="118" selection-end-line="117" selection-end-column="118" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/businesslogic/entities/users/Librarian.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <folding>
+            <element signature="e#3271#3272#0" expanded="true" />
+            <element signature="e#3308#3309#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/MainLibrarianViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="118" column="61" lean-forward="true" selection-start-line="118" selection-start-column="61" selection-end-line="118" selection-end-column="61" />
+        <state relative-caret-position="396">
+          <caret line="457" column="9" lean-forward="false" selection-start-line="457" selection-start-column="9" selection-end-line="457" selection-end-column="9" />
+          <folding>
+            <element signature="e#7254#7479#0" expanded="false" />
+            <element signature="e#7583#7803#0" expanded="false" />
+            <element signature="e#7906#8125#0" expanded="false" />
+            <element signature="e#8228#8447#0" expanded="false" />
+            <element signature="e#8560#8789#0" expanded="false" />
+            <element signature="e#8888#9103#0" expanded="false" />
+            <element signature="method#setUpAllLibraryBooksTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#setUpBorrowingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#setUpExchangesTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#setUpOrderingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#setUpRequireConfirmationTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#setUpUsersTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#updateAllLibraryBooksTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#updateBorrowingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#updateExchangesTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#updateOrderingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#updateRequireConfirmationTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#updateUsersTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="e#20104#20105#0" expanded="true" />
+            <element signature="e#20142#20143#0" expanded="true" />
+            <element signature="method#onClickRegisterNewUserButton#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="e#20784#20785#0" expanded="true" />
+            <element signature="e#20847#20848#0" expanded="true" />
+            <element signature="method#showInfoAllLibraryBooksTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#showInfoBorrowingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#showInfoExchangesTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#showInfoOrderingsTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#showInfoRequireConfirmationTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#showInfoUsersTable#0;class#MainLibrarianViewController#0" expanded="false" />
+            <element signature="method#clearAllLabelsInfo#0;class#MainLibrarianViewController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/AddBookDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="72" column="50" lean-forward="true" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/maxciv/gui/controllers/RegistrationDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
           <folding />
         </state>
       </provider>

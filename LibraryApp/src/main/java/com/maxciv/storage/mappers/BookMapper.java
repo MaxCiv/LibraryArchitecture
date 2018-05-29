@@ -23,7 +23,7 @@ public class BookMapper implements Mapper<Book> {
         if (loadedBookMap.values().contains(book)) {
             update(book);
         } else {
-            String insertSQL = "INSERT INTO book(title, author, publisher, publish_year, status, condition) VALUES (?, ?, ?, ?, ?, ?);";
+            String insertSQL = "INSERT INTO book(title, author, publisher, publish_year, book.status, book.condition) VALUES (?, ?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, book.getTitle());
             preparedStatement.setString(2, book.getAuthor());
@@ -89,7 +89,7 @@ public class BookMapper implements Mapper<Book> {
     @Override
     public void update(Book item) throws SQLException {
         if (loadedBookMap.values().contains(item)) {
-            String updateSQL = "UPDATE book SET  title = ?, author = ?, publisher = ?, publish_year = ?, status = ?, condition = ?  WHERE id = ?;";
+            String updateSQL = "UPDATE book SET  title = ?, author = ?, publisher = ?, publish_year = ?, book.status = ?, book.condition = ?  WHERE id = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
             preparedStatement.setString(1, item.getTitle());
             preparedStatement.setString(2, item.getAuthor());
@@ -99,6 +99,8 @@ public class BookMapper implements Mapper<Book> {
             preparedStatement.setInt(6, item.getCondition().getConditionId());
             preparedStatement.setInt(7, item.getId());
             preparedStatement.execute();
+
+            loadedBookMap.replace(item.getId(), item);
         } else {
             addBook(item);
         }
