@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class OrderBookDialogController {
 
     private Facade facade = Main.FACADE;
+    private MainLibrarianViewController librarianViewController;
 
     @FXML private TextField bookIdTextField;
     @FXML private TextField supplierIdTextField;
@@ -45,7 +46,14 @@ public class OrderBookDialogController {
             return;
         }
 
+        librarianViewController.onClickRefreshButton();
+        librarianViewController.setMessageOnImage(0, "Successful ordering.");
+
         Stage stage = (Stage) errorLabel.getScene().getWindow();
         stage.close();
+    }
+
+    public void setLibrarianViewController(MainLibrarianViewController librarianViewController) {
+        this.librarianViewController = librarianViewController;
     }
 }

@@ -52,9 +52,9 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
 
             loadedBookExchangeMap.put(bookExchange.getId(), bookExchange);
 
-//            bookMapper.update(bookExchange.getBook());
-//            userMapper.update(bookExchange.getOwner());
-//            if (bookExchange.getReader() != null) userMapper.update(bookExchange.getReader());
+            bookMapper.update(bookExchange.getBook());
+            userMapper.update(bookExchange.getOwner());
+            if (bookExchange.getReader() != null) userMapper.update(bookExchange.getReader());
         }
     }
 
@@ -118,7 +118,6 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
             preparedStatement.setInt(1, item.getBook().getId());
             preparedStatement.setInt(2, item.getOwner().getId());
             preparedStatement.setString(3, Util.getStringFromFormattedDate(item.getOpenExchangeDate()));
-            preparedStatement.setInt(4, item.getReader().getId());
             if (item.getReader() == null) {
                 preparedStatement.setNull(4, Types.INTEGER);
             } else {
@@ -131,9 +130,9 @@ public class BookExchangeMapper implements Mapper<BookExchange> {
 
             loadedBookExchangeMap.replace(item.getId(), item);
 
-//            bookMapper.update(item.getBook());
-//            userMapper.update(item.getOwner());
-//            if (item.getReader() != null) userMapper.update(item.getReader());
+            bookMapper.update(item.getBook());
+            userMapper.update(item.getOwner());
+            if (item.getReader() != null) userMapper.update(item.getReader());
         } else {
             addBookExchange(item);
         }

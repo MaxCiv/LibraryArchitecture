@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 public class AddBookDialogController {
 
     private Facade facade = Main.FACADE;
+    private MainLibrarianViewController librarianViewController;
     private ObservableList<String> statuses = FXCollections.observableArrayList(Status.LIBRARY.getStatusName(),
             Status.EXCHANGE.getStatusName(), Status.ORDER.getStatusName());
 
@@ -78,7 +79,14 @@ public class AddBookDialogController {
             facade.addNewBook(title, author, publisher, publishYear, statusInt, -1);
         }
 
+        librarianViewController.onClickRefreshButton();
+        librarianViewController.setMessageOnImage(0, "Book added successfully.");
+
         Stage stage = (Stage) titleTextField.getScene().getWindow();
         stage.close();
+    }
+
+    public void setLibrarianViewController(MainLibrarianViewController librarianViewController) {
+        this.librarianViewController = librarianViewController;
     }
 }

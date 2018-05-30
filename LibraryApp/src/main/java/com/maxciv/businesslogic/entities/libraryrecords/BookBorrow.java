@@ -9,9 +9,13 @@ public class BookBorrow extends AbstractBookRecord {
 
     private Reader reader;
 
-    public BookBorrow(int id, Book book, Reader reader, Date startDate) {
+    public BookBorrow(int id, Book book, Reader reader) {
         super(id, book);
         this.reader = reader;
+    }
+
+    public BookBorrow(int id, Book book, Reader reader, Date startDate) {
+        this(id, book, reader);
         this.setStartDate(startDate);
     }
 

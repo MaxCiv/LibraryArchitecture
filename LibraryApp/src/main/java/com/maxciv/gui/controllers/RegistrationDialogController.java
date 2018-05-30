@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 public class RegistrationDialogController {
 
     private Facade facade = Main.FACADE;
+    private MainLibrarianViewController librarianViewController;
 
     private ObservableList<String> roles = FXCollections.observableArrayList(Role.LIBRARIAN.getRoleName(),
             Role.READER.getRoleName(), Role.SUPPLIER.getRoleName());
@@ -56,7 +57,14 @@ public class RegistrationDialogController {
 
         facade.addNewUser(login, password, name, role);
 
+        librarianViewController.onClickRefreshButton();
+        librarianViewController.setMessageOnImage(0, "Successful registration.");
+
         Stage stage = (Stage) loginTextField.getScene().getWindow();
         stage.close();
+    }
+
+    public void setLibrarianViewController(MainLibrarianViewController librarianViewController) {
+        this.librarianViewController = librarianViewController;
     }
 }

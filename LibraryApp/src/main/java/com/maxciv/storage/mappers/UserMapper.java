@@ -123,6 +123,10 @@ public class UserMapper implements Mapper<User> {
             preparedStatement.execute();
             int realId = findByLogin(item.getLogin()).getId();
             item.setId(realId);
+            if (item instanceof Reader) {
+                ((Reader)item).setCountBookLeftForExchange(getCountBookLeftForExchange(item.getId()));
+                ((Reader)item).setCountBookTakenByExchange(getCountBookTakenByExchange(item.getId()));
+            }
             loadedUserMap.replace(realId, item);
         } else {
             addUser(item);
@@ -159,7 +163,7 @@ public class UserMapper implements Mapper<User> {
     }
 
     private int getCountBookLeftForExchange(final int ownerId) throws SQLException {
-        String selectSQL = "SELECT COUNT(*) FROM exchangebooks WHERE (owner_id = ? AND end_date IS NULL);";
+        String selectSQL = "SELECT COUNT(*) FROM exchangebooks WHERE (owner_id = ? AND end_date IS NULL AND open_exchange_date IS NOT NULL);";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setInt(1, ownerId);
         ResultSet resultSet = preparedStatement.executeQuery();

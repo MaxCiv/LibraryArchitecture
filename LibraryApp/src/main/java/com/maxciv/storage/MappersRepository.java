@@ -91,6 +91,22 @@ public class MappersRepository implements Repository {
     }
 
     @Override
+    public List<BookBorrow> getAllUserBorrows(Reader reader) {
+        List<BookBorrow> allBookBorrows = null;
+        try {
+            allBookBorrows = new ArrayList<>(bookBorrowMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        List<BookBorrow> userBookBorrows = new ArrayList<>();
+        for (BookBorrow bookBorrow : allBookBorrows) {
+            if (bookBorrow.getReader().equals(reader)) userBookBorrows.add(bookBorrow);
+        }
+        return userBookBorrows;
+    }
+
+    @Override
     public List<BookExchange> getAllExchanges() {
         try {
             return new ArrayList<>(bookExchangeMapper.findAll().values());
@@ -101,6 +117,23 @@ public class MappersRepository implements Repository {
     }
 
     @Override
+    public List<BookExchange> getAllUserExchanges(Reader reader) {
+        List<BookExchange> allBookExchanges;
+        try {
+            allBookExchanges = new ArrayList<>(bookExchangeMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        List<BookExchange> userBookExchanges = new ArrayList<>();
+        for (BookExchange bookExchange : allBookExchanges) {
+            if (bookExchange.getOwner().equals(reader) || (bookExchange.getReader() != null && bookExchange.getReader().equals(reader)))
+                userBookExchanges.add(bookExchange);
+        }
+        return userBookExchanges;
+    }
+
+    @Override
     public List<BookOrder> getAllOrderings() {
         try {
             return new ArrayList<>(bookOrderMapper.findAll().values());
@@ -108,6 +141,22 @@ public class MappersRepository implements Repository {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public List<BookOrder> getAllUserOrderings(Supplier supplier) {
+        List<BookOrder> allBookOrders;
+        try {
+            allBookOrders = new ArrayList<>(bookOrderMapper.findAll().values());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        List<BookOrder> userBookOrders = new ArrayList<>();
+        for (BookOrder bookOrder : allBookOrders) {
+            if (bookOrder.getSupplier().equals(supplier)) userBookOrders.add(bookOrder);
+        }
+        return userBookOrders;
     }
 
     @Override
@@ -159,6 +208,15 @@ public class MappersRepository implements Repository {
     }
 
     @Override
+    public void addNewBookBorrow(BookBorrow bookBorrow) {
+        try {
+            bookBorrowMapper.addBookBorrow(bookBorrow);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void openNewExchange(BookExchange bookExchange) {
         try {
             bookExchangeMapper.addBookExchange(bookExchange);
@@ -201,15 +259,15 @@ public class MappersRepository implements Repository {
                     Book book = (Book) obj;
                     bookMapper.update(book);
                     break;
-                case "Film":
+                case "BookBorrow":
                     BookBorrow bookBorrow = (BookBorrow) obj;
                     bookBorrowMapper.update(bookBorrow);
                     break;
-                case "Seans":
+                case "BookExchange":
                     BookExchange bookExchange = (BookExchange) obj;
                     bookExchangeMapper.update(bookExchange);
                     break;
-                case "Bron":
+                case "BookOrder":
                     BookOrder bookOrder = (BookOrder) obj;
                     bookOrderMapper.update(bookOrder);
                     break;

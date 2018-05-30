@@ -20,19 +20,37 @@ public interface Facade {
     String getUserLogin(int userId) throws NotFoundException;
     String getUserName(int userId) throws NotFoundException;
 
+    User getUser(int userId) throws NotFoundException;
     Book getBook(int bookId) throws NotFoundException;
 
     List<Book> getAllBooks() throws NotFoundException;
     List<BookBorrow> getAllBorrows() throws NotFoundException;
+    List<BookBorrow> getAllUserBorrows(int userId) throws NotFoundException;
     List<BookExchange> getAllExchanges() throws NotFoundException;
+    List<BookExchange> getAllUserExchanges(int userId) throws NotFoundException;
     List<BookOrder> getAllOrderings() throws NotFoundException;
+    List<BookOrder> getAllUserOrderings(int userId) throws NotFoundException;
     List<BookRecord> getAllRequireConfirmation() throws NotFoundException;
     List<User> getAllUsers() throws NotFoundException;
 
+    // Functions of Librarian
     void addNewUser(String login, String password, String name, String role);
     void addNewBook(String title, String author, String publisher, int publishYear, int statusInt, int ownerId);
-
     void openNewOrder(int bookId, int supplierId) throws LibraryAppException;
+    void confirmBorrowing(Object bookBorrow) throws LibraryAppException;
+    void closeBorrowing(Object bookBorrow) throws LibraryAppException;
+    void confirmExchange(Object bookExchange) throws LibraryAppException;
+    void closeExchange(Object bookExchange) throws LibraryAppException;
+
+    // Functions of Reader
+    void borrowBookToReader(Object book) throws LibraryAppException;
+    void takeBookByExchangeToReader(Object bookExchange) throws LibraryAppException;
+    void startExchange(Object bookExchange) throws LibraryAppException;
+    void closeExchangeAndTakeBookToOwner(Object bookExchange) throws LibraryAppException;
+
+    // Functions of Supplier
+    void finishOrder(Object bookOrder) throws LibraryAppException;
+    void denyOrder(Object bookOrder) throws LibraryAppException;
 
     void update();
 }

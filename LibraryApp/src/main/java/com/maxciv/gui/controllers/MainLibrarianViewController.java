@@ -11,11 +11,13 @@ import com.maxciv.businesslogic.entities.libraryrecords.BookOrder;
 import com.maxciv.businesslogic.entities.libraryrecords.BookRecord;
 import com.maxciv.businesslogic.entities.users.Supplier;
 import com.maxciv.businesslogic.entities.users.User;
+import com.maxciv.businesslogic.exceptions.LibraryAppException;
 import com.maxciv.businesslogic.exceptions.NotFoundException;
 import com.maxciv.gui.facades.Facade;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,27 +25,31 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.Date;
 
 public class MainLibrarianViewController {
-
-
 
     private Facade facade = Main.FACADE;
     private int currentLibrarianId;
     private String currentLibrarianLogin;
     private Object lastChosenRow = null;
+    private Thread closeErrorToolBarThread;
 
     @FXML private Label currentLibrarianIdLabel;
     @FXML private Label currentLibrarianLoginLabel;
     @FXML private Label currentLibrarianNameLabel;
 
     @FXML private ImageView infoImage;
+    @FXML private ToolBar errorToolBar;
+    @FXML private TextField errorTextField;
 
     @FXML private Label bookTitleLabel;
     @FXML private Label authorLabel;
@@ -186,7 +192,16 @@ public class MainLibrarianViewController {
                     lastChosenRow = newValue;
                 });
 
-        //setMessageOnImage(1, "Error!");
+        closeErrorToolBarThread = new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                return;
+            }
+            errorToolBar.setVisible(false);
+        });
+        onClickCloseError();
+        onClickRefreshButton();
     }
 
     private void setUpAllLibraryBooksTable() {
@@ -410,6 +425,10 @@ public class MainLibrarianViewController {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/view/RegistrationDialog.fxml"));
             AnchorPane root = loader.load();
+
+            RegistrationDialogController registrationDialogController = loader.getController();
+            registrationDialogController.setLibrarianViewController(this);
+
             Scene scene = new Scene(root);
 
             Stage newWindow = new Stage();
@@ -424,26 +443,59 @@ public class MainLibrarianViewController {
     @FXML
     public void onClickTextFieldSelectAll(MouseEvent mouseEvent) {
         ((TextField)mouseEvent.getSource()).selectAll();
+        String someId = ((TextField)mouseEvent.getSource()).getText();
+        if (someId.isEmpty()) return;
+        final ClipboardContent clipboardContent = new ClipboardContent();
+        clipboardContent.putString(someId);
+        Clipboard.getSystemClipboard().setContent(clipboardContent);
     }
 
     @FXML
-    public void onClickCloseExchange() {
-
-    }
-
-    @FXML
-    public void onClickConfirmExchange() {
-
+    public void onClickConfirmBorrowing() {
+        try {
+            facade.confirmBorrowing(lastChosenRow);
+        } catch (LibraryAppException e) {
+            setMessageOnImage(1, e.getMessage());
+            return;
+        }
+        setMessageOnImage(0, "Borrowing successfully confirmed.");
+        onClickRefreshButton();
     }
 
     @FXML
     public void onClickCloseBorrowing() {
-
+        try {
+            facade.closeBorrowing(lastChosenRow);
+        } catch (LibraryAppException e) {
+            setMessageOnImage(1, e.getMessage());
+            return;
+        }
+        setMessageOnImage(0, "Borrowing successfully closed.");
+        onClickRefreshButton();
     }
 
     @FXML
-    public void onClickConfirmBorrowingButton() {
+    public void onClickConfirmExchange() {
+        try {
+            facade.confirmExchange(lastChosenRow);
+        } catch (LibraryAppException e) {
+            setMessageOnImage(1, e.getMessage());
+            return;
+        }
+        setMessageOnImage(0, "Exchange successfully confirmed.");
+        onClickRefreshButton();
+    }
 
+    @FXML
+    public void onClickCloseExchange() {
+        try {
+            facade.closeExchange(lastChosenRow);
+        } catch (LibraryAppException e) {
+            setMessageOnImage(1, e.getMessage());
+            return;
+        }
+        setMessageOnImage(0, "Exchange successfully closed.");
+        onClickRefreshButton();
     }
 
     @FXML
@@ -464,6 +516,7 @@ public class MainLibrarianViewController {
 
             OrderBookDialogController orderBookDialogController = loader.getController();
             orderBookDialogController.init(bookId, supplierId);
+            orderBookDialogController.setLibrarianViewController(this);
 
             Scene scene = new Scene(root);
 
@@ -482,6 +535,10 @@ public class MainLibrarianViewController {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/view/AddBookDialog.fxml"));
             AnchorPane root = loader.load();
+
+            AddBookDialogController addBookDialogController = loader.getController();
+            addBookDialogController.setLibrarianViewController(this);
+
             Scene scene = new Scene(root);
 
             Stage newWindow = new Stage();
@@ -594,12 +651,41 @@ public class MainLibrarianViewController {
     }
 
     public void setMessageOnImage(int code, String message) {
+        String mess = Util.getStringTimeFromFormattedDate(new Date()) + ": " + message;
         if (code == 0) {
             infoImage.setImage(new Image("/info.png"));
         } else infoImage.setImage(new Image("/error.png"));
         Tooltip tooltip = new Tooltip();
-        tooltip.setText(message);
+        tooltip.setText(mess);
         tooltip.setShowDelay(new Duration(0));
         Tooltip.install(infoImage, tooltip);
+
+        errorTextField.setText(mess);
+        errorToolBar.setVisible(true);
+
+        if (closeErrorToolBarThread.isAlive()) closeErrorToolBarThread.interrupt();
+        closeErrorToolBarThread = new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                return;
+            }
+            errorToolBar.setVisible(false);
+        });
+        closeErrorToolBarThread.start();
+    }
+
+    @FXML
+    public void onClickCloseError() {
+        if (closeErrorToolBarThread.isAlive()) closeErrorToolBarThread.interrupt();
+        errorToolBar.setVisible(false);
+    }
+
+    @FXML
+    public void onClickInfoImage() {
+        if (closeErrorToolBarThread.isAlive()) closeErrorToolBarThread.interrupt();
+        if (errorToolBar.isVisible()) {
+            errorToolBar.setVisible(false);
+        } else errorToolBar.setVisible(true);
     }
 }
