@@ -5,18 +5,29 @@ import com.maxciv.businesslogic.Role;
 import com.maxciv.businesslogic.Status;
 import com.maxciv.businesslogic.exceptions.NotFoundException;
 import com.maxciv.gui.facades.Facade;
+import com.maxciv.gui.facades.ServiceFacade;
+import com.maxciv.service.googlebooks.GoogleBook;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class AddBookDialogController {
 
     private Facade facade = Main.FACADE;
+    private ServiceFacade serviceFacade = new ServiceFacade();
     private MainLibrarianViewController librarianViewController;
+    private ExecutorService executor = Executors.newFixedThreadPool(2);
+    private Future lastFuture;
     private ObservableList<String> statuses = FXCollections.observableArrayList(Status.LIBRARY.getStatusName(),
             Status.EXCHANGE.getStatusName(), Status.ORDER.getStatusName());
 
@@ -28,6 +39,13 @@ public class AddBookDialogController {
     @FXML private TextField ownerIdTextField;
     @FXML private Label errorLabel;
 
+    private ObservableList<GoogleBook> googleBookObservableList = FXCollections.observableArrayList();
+    @FXML private TableView<GoogleBook> googleBooksTableView;
+    @FXML private TableColumn<GoogleBook, String> titleTableColumn;
+    @FXML private TableColumn<GoogleBook, String> authorsTableColumn;
+    @FXML private TableColumn<GoogleBook, String> publisherTableColumn;
+    @FXML private TableColumn<GoogleBook, String> publishYearTableColumn;
+
     public AddBookDialogController() {
     }
 
@@ -37,17 +55,40 @@ public class AddBookDialogController {
 
         statusChoiceBox.setItems(statuses);
         statusChoiceBox.setValue(Status.LIBRARY.getStatusName());
+
+        setGoogleBooksTable();
+
+        googleBooksTableView.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> {
+                    if (newValue != null) {
+                        titleTextField.setText(newValue.getTitle());
+                        authorTextField.setText(newValue.getAuthor());
+                        publisherTextField.setText(newValue.getPublisher());
+                        publishYearTextField.setText(newValue.getPublishYear());
+                    }
+                });
+
+        titleTextField.textProperty().addListener((observable, oldValue, newValue) -> onActionTitleTextField());
+        authorTextField.textProperty().addListener((observable, oldValue, newValue) -> onActionAuthorTextField());
+    }
+
+    private void setGoogleBooksTable() {
+        titleTableColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        authorsTableColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+        publisherTableColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+        publishYearTableColumn.setCellValueFactory(new PropertyValueFactory<>("publishYear"));
+        googleBooksTableView.setItems(googleBookObservableList);
     }
 
     @FXML
-    public void onClickAddButton() {
+    private void onClickAddButton() {
         String title, author, publisher;
         int publishYear, statusInt, ownerId;
 
         title = titleTextField.getText();
         author = authorTextField.getText();
         publisher = publisherTextField.getText();
-        if (title.isEmpty() || author.isEmpty() || publisher.isEmpty()) {
+        if (title == null || title.isEmpty() || author == null || author.isEmpty() || publisher == null || publisher.isEmpty()) {
             errorLabel.setText("Input all information.");
             return;
         }
@@ -86,7 +127,44 @@ public class AddBookDialogController {
         stage.close();
     }
 
+    @FXML
+    private void onClickSelectAll(MouseEvent mouseEvent) {
+        ((TextField)mouseEvent.getSource()).selectAll();
+    }
+
+    @FXML
+    private void onActionTitleTextField() {
+        if (lastFuture != null) lastFuture.cancel(true);
+        lastFuture = executor.submit(() -> {
+            if (titleTextField.getText().length() > 3) searchGoogleBooksByTitle(titleTextField.getText());
+        });
+    }
+
+    @FXML
+    private void onActionAuthorTextField() {
+        if (lastFuture != null) lastFuture.cancel(true);
+        lastFuture = executor.submit(() -> {
+            if (authorTextField.getText().length() > 3) searchGoogleBooksByAuthor(authorTextField.getText());
+        });
+    }
+
+    private void searchGoogleBooksByTitle(String title) {
+        List<GoogleBook> googleBooks = serviceFacade.searchGoogleBooksByTitle(title);
+        googleBookObservableList.removeAll(googleBookObservableList);
+        googleBookObservableList.addAll(googleBooks);
+    }
+
+    private void searchGoogleBooksByAuthor(String author) {
+        List<GoogleBook> googleBooks = serviceFacade.searchGoogleBooksByAuthor(author);
+        googleBookObservableList.removeAll(googleBookObservableList);
+        googleBookObservableList.addAll(googleBooks);
+    }
+
     public void setLibrarianViewController(MainLibrarianViewController librarianViewController) {
         this.librarianViewController = librarianViewController;
+    }
+
+    public void onCloseWindow() {
+        executor.shutdownNow();
     }
 }

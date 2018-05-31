@@ -4,14 +4,17 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maxciv.gui.controllers.AddBookDialogController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maxciv.gui.controllers.AddBookDialogController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="73.0" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="73.0" prefHeight="597.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" text="Add New Book">
                <VBox.margin>
@@ -21,40 +24,47 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="titleTextField" alignment="CENTER" onAction="#onClickAddButton" promptText="Title" text="z1">
+            <TextField fx:id="titleTextField" alignment="CENTER" onAction="#onActionTitleTextField" onMouseClicked="#onClickSelectAll" promptText="Title">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="authorTextField" alignment="CENTER" layoutX="40.0" layoutY="62.0" onAction="#onClickAddButton" promptText="Author" text="z1">
+            <TextField fx:id="authorTextField" alignment="CENTER" layoutX="40.0" layoutY="62.0" onAction="#onActionAuthorTextField" onMouseClicked="#onClickSelectAll" promptText="Author">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="publisherTextField" alignment="CENTER" layoutX="40.0" layoutY="102.0" onAction="#onClickAddButton" promptText="Publisher" text="z1">
+            <TextField fx:id="publisherTextField" alignment="CENTER" layoutX="40.0" layoutY="102.0" onAction="#onClickAddButton" onMouseClicked="#onClickSelectAll" promptText="Publisher">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="publishYearTextField" alignment="CENTER" layoutX="40.0" layoutY="182.0" onAction="#onClickAddButton" promptText="Publish Year" text="1111">
+            <HBox>
                <VBox.margin>
-                  <Insets left="30.0" right="30.0" top="15.0" />
+                  <Insets top="15.0" />
                </VBox.margin>
-            </TextField>
-            <ChoiceBox fx:id="statusChoiceBox" prefWidth="240.0">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" top="15.0" />
-               </VBox.margin>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </ChoiceBox>
-            <TextField fx:id="ownerIdTextField" alignment="CENTER" layoutX="40.0" layoutY="182.0" onAction="#onClickAddButton" promptText="Owner ID" text="2">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" top="15.0" />
-               </VBox.margin>
-            </TextField>
-            <Label fx:id="errorLabel" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="Errors:" textAlignment="CENTER" wrapText="true">
+               <children>
+                  <TextField fx:id="publishYearTextField" alignment="CENTER" onAction="#onClickAddButton" prefWidth="225.0" promptText="Publish Year">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField fx:id="ownerIdTextField" alignment="CENTER" onAction="#onClickAddButton" prefWidth="225.0" promptText="Owner ID">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ChoiceBox fx:id="statusChoiceBox" prefWidth="230.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+            </HBox>
+            <Label fx:id="errorLabel" alignment="CENTER" prefHeight="40.0" prefWidth="700.0" text="Errors:" textAlignment="CENTER" wrapText="true">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
@@ -64,6 +74,17 @@
                   <Insets left="30.0" right="30.0" top="15.0" />
                </VBox.margin>
             </Button>
+            <TableView fx:id="googleBooksTableView" prefHeight="281.0">
+              <columns>
+                <TableColumn fx:id="titleTableColumn" maxWidth="-1.0" minWidth="300.0" prefWidth="-1.0" text="Title" />
+                <TableColumn fx:id="authorsTableColumn" maxWidth="-1.0" minWidth="250.0" prefWidth="-1.0" text="Authors" />
+                  <TableColumn fx:id="publisherTableColumn" maxWidth="-1.0" minWidth="150.0" prefWidth="-1.0" text="Publisher" />
+                  <TableColumn fx:id="publishYearTableColumn" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="Publish Date" />
+              </columns>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TableView>
          </children>
       </VBox>
    </children>
