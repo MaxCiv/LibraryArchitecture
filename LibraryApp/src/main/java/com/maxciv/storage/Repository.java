@@ -15,6 +15,7 @@ public interface Repository {
 
     User logInUser(String login, String realPassword);
     User findUserById(int id);
+    User findUserByLogin(String login);
     Book findBookById(int id);
 
     List<Book> getAllBooks();

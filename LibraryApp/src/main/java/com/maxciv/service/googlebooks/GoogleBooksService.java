@@ -14,7 +14,7 @@ import java.util.List;
 public class GoogleBooksService {
 
     private static final String APPLICATION_NAME = "LibraryApp/1.0";
-    private static final String API_KEY = "AIzaSyDs4OzPHNkL_FG5IM5Ig7miI44VbRo9_WE";
+    private static final String API_KEY = "AIzaSyDs4OzPHNkL_FG5IM5Ig7miI44VbRo9_WE";    // get your own key on Google API Console
 
     public GoogleBooksService() {
     }

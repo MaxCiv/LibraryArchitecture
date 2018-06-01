@@ -5,18 +5,16 @@ import com.maxciv.businesslogic.entities.libraryrecords.BookBorrow;
 import com.maxciv.businesslogic.entities.libraryrecords.BookExchange;
 import com.maxciv.businesslogic.entities.libraryrecords.BookOrder;
 import com.maxciv.businesslogic.entities.libraryrecords.BookRecord;
-import com.maxciv.businesslogic.entities.users.Librarian;
 import com.maxciv.businesslogic.entities.users.Reader;
 import com.maxciv.businesslogic.entities.users.Supplier;
 import com.maxciv.businesslogic.entities.users.User;
 import com.maxciv.storage.mappers.*;
-import org.apache.commons.codec.digest.DigestUtils;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MappersRepository implements Repository {
+public class MockRepository implements Repository {
 
     private static BookMapper bookMapper;
     private static UserMapper userMapper;
@@ -24,7 +22,7 @@ public class MappersRepository implements Repository {
     private static BookExchangeMapper bookExchangeMapper;
     private static BookOrderMapper bookOrderMapper;
 
-    public MappersRepository() {
+    public MockRepository() {
         try {
             if (bookMapper == null) bookMapper = new BookMapper();
             if (userMapper == null) userMapper = new UserMapper();
@@ -201,90 +199,37 @@ public class MappersRepository implements Repository {
 
     @Override
     public void addNewUser(User newUser) {
-        try {
-            userMapper.addUser(newUser);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public void addNewBook(Book book) {
-        try {
-            bookMapper.addBook(book);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public void addNewBookBorrow(BookBorrow bookBorrow) {
-        try {
-            bookBorrowMapper.addBookBorrow(bookBorrow);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public void openNewExchange(BookExchange bookExchange) {
-        try {
-            bookExchangeMapper.addBookExchange(bookExchange);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public void openNewOrder(BookOrder bookOrder) {
-        try {
-            bookOrderMapper.addBookOrder(bookOrder);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public void updateExchange(BookExchange bookExchange) {
-        try {
-            bookExchangeMapper.update(bookExchange);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public void update(Object obj) {
-        String name = obj.getClass().getSimpleName();
-        if (name.equals("Librarian") || name.equals("Reader") || name.equals("Supplier")) {
-            name = "User";
-        }
-        try {
-            switch (name) {
-                case "User":
-                    User user = (User) obj;
-                    userMapper.update(user);
-                    break;
-                case "Book":
-                    Book book = (Book) obj;
-                    bookMapper.update(book);
-                    break;
-                case "BookBorrow":
-                    BookBorrow bookBorrow = (BookBorrow) obj;
-                    bookBorrowMapper.update(bookBorrow);
-                    break;
-                case "BookExchange":
-                    BookExchange bookExchange = (BookExchange) obj;
-                    bookExchangeMapper.update(bookExchange);
-                    break;
-                case "BookOrder":
-                    BookOrder bookOrder = (BookOrder) obj;
-                    bookOrderMapper.update(bookOrder);
-                    break;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override

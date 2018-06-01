@@ -51,6 +51,8 @@ public class AddBookDialogController {
 
     @FXML
     private void initialize() {
+        lastFuture = executor.submit(() -> serviceFacade.searchGoogleBooksByAuthor("Bodhi Oser")); // init google books
+
         errorLabel.setText("");
 
         statusChoiceBox.setItems(statuses);

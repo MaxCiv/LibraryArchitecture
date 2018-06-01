@@ -17,7 +17,6 @@ import com.maxciv.gui.facades.Facade;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -30,7 +29,6 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -659,7 +657,7 @@ public class MainLibrarianViewController {
         } else infoImage.setImage(new Image("/error.png"));
         Tooltip tooltip = new Tooltip();
         tooltip.setText(mess);
-        tooltip.setShowDelay(new Duration(0));
+//        tooltip.setShowDelay(new Duration(0));
         Tooltip.install(infoImage, tooltip);
 
         errorTextField.setText(mess);

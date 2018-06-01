@@ -449,7 +449,7 @@ public class MainReaderViewController {
         } else infoImage.setImage(new Image("/error.png"));
         Tooltip tooltip = new Tooltip();
         tooltip.setText(mess);
-        tooltip.setShowDelay(new Duration(0));
+//        tooltip.setShowDelay(new Duration(0));
         Tooltip.install(infoImage, tooltip);
 
         //TODO появления error toolbar с сообщением и последующее удаление

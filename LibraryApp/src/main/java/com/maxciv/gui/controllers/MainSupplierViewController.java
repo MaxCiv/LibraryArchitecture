@@ -265,7 +265,7 @@ public class MainSupplierViewController {
         } else infoImage.setImage(new Image("/error.png"));
         Tooltip tooltip = new Tooltip();
         tooltip.setText(mess);
-        tooltip.setShowDelay(new Duration(0));
+//        tooltip.setShowDelay(new Duration(0));
         Tooltip.install(infoImage, tooltip);
 
         errorTextField.setText(mess);
