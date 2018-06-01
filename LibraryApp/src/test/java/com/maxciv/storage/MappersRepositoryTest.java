@@ -1,7 +1,5 @@
 package com.maxciv.storage;
 
-import com.maxciv.businesslogic.entities.libraryrecords.BookBorrow;
-import com.maxciv.businesslogic.entities.users.Librarian;
 import com.maxciv.businesslogic.entities.users.Reader;
 import com.maxciv.businesslogic.entities.users.Supplier;
 import org.junit.*;

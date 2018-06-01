@@ -15,7 +15,7 @@ import java.util.List;
 public class Reader extends AbstractUser {
 
     private int countBookLeftForExchange = 0;   // количество книг, которые читатель оставил на обмен (книги на обмене,
-                                            // владельцем которых является данный читатель и у которых нет даты окончания)
+                                                // владельцем которых является данный читатель и у которых нет даты окончания)
     private int countBookTakenByExchange = 0;   // количество книг, которые читатель взял по обмену
 
     public Reader(int id, String login, String password, String name) {
