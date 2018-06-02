@@ -30,7 +30,7 @@ public class SimpleHttpServer {
             server.createContext("/get", new EchoHandler());    // http://localhost:8000/get
             server.setExecutor(null);
             server.start();
-            System.out.println("Server Started in other thread!");
+            System.out.println("Server started!");
         } catch (IOException ex) {
             System.out.println("Server not started");
         }
@@ -48,7 +48,7 @@ public class SimpleHttpServer {
                 return;
             }
 
-            String answer = new String(builder.toString().getBytes(), "UTF-8");
+            String answer = new String(builder.toString().getBytes());
             byte[] bytes = answer.getBytes();
 
             exchange.sendResponseHeaders(200, bytes.length);
